@@ -316,7 +316,7 @@ function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary"
-                    style={{ width: "100%"}}
+                    style={{ width: "100%" }}
                   >
                     <MessageCircle size={14} /> WhatsApp Us Instantly
                   </a>

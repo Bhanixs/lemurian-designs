@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X, Phone, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Logo } from "@/components/Logo";
 
@@ -16,6 +16,32 @@ export function Navbar({ theme = "dark" }: { theme?: "dark" | "light" | "auto" }
   const routerState = useRouterState();
   const currentPath = routerState.location.pathname;
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Close mobile drawer on route navigation
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [currentPath]);
+
+  // Lock body scrolling when drawer is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const navLinks = [
     { label: "About", path: "/about" },
@@ -59,61 +85,85 @@ export function Navbar({ theme = "dark" }: { theme?: "dark" | "light" | "auto" }
         </nav>
 
         {/* Mobile Menu Trigger */}
-        <div className="mobile-nav-toggle md:hidden">
+        <div className="mobile-nav-toggle">
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="mobile-toggle-btn"
-            aria-label={mobileOpen ? "Close menu" : "Open navigation menu"}
+            className="mobile-burger-btn"
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            <span className="text-xs uppercase tracking-wider font-semibold ml-1.5">
+            <span className="burger-icon-box">
+              {mobileOpen ? <X size={17} /> : <Menu size={17} />}
+            </span>
+            <span className="text-xs uppercase tracking-wider font-semibold">
               {mobileOpen ? "Close" : "Menu"}
             </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Fullscreen Blur Overlay */}
       {mobileOpen && (
-        <div className="mobile-nav-drawer" role="dialog" aria-modal="true">
-          <nav className="mobile-drawer-nav">
-            <Link
-              to="/"
-              onClick={() => setMobileOpen(false)}
-              className={`mobile-nav-link ${currentPath === "/" ? "active" : ""}`}
-            >
-              Home
-            </Link>
-            {navLinks.map((link) => (
+        <div
+          className="mobile-menu-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile Navigation"
+        >
+          <div className="mobile-drawer-content">
+            <nav className="mobile-drawer-links" aria-label="Mobile links">
               <Link
-                key={link.path}
-                to={link.path}
+                to="/"
                 onClick={() => setMobileOpen(false)}
-                className={`mobile-nav-link ${currentPath === link.path ? "active" : ""}`}
+                className={`mobile-nav-item ${currentPath === "/" ? "active" : ""}`}
               >
-                {link.label}
+                <span className="mobile-nav-num">00</span>
+                <span className="mobile-nav-text">Home</span>
               </Link>
-            ))}
 
-            <Link to="/contact" onClick={() => setMobileOpen(false)} className="mobile-nav-cta">
-              Request Consultation <ArrowUpRight size={14} />
-            </Link>
+              {navLinks.map((link, idx) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileOpen(false)}
+                  className={`mobile-nav-item ${currentPath === link.path ? "active" : ""}`}
+                >
+                  <span className="mobile-nav-num">{String(idx + 1).padStart(2, "0")}</span>
+                  <span className="mobile-nav-text">{link.label}</span>
+                </Link>
+              ))}
+            </nav>
 
-            <div className="mobile-direct-actions">
-              <a href="tel:+919876543210" className="mobile-quick-btn">
-                <Phone size={13} /> Call Us Now
-              </a>
-              <a
-                href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mobile-quick-btn"
+            <div className="mobile-drawer-footer">
+              <Link
+                to="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="mobile-cta-button"
               >
-                <MessageCircle size={13} /> WhatsApp Us
-              </a>
+                <span>Request Consultation</span>
+                <ArrowUpRight size={15} />
+              </Link>
+
+              <div className="mobile-drawer-contact-row">
+                <a href="tel:+919876543210" className="mobile-contact-pill">
+                  <Phone size={13} />
+                  <span>Call Direct</span>
+                </a>
+                <a
+                  href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mobile-contact-pill"
+                >
+                  <MessageCircle size={13} />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+
+              <p className="mobile-drawer-note">Lemurian Designers • Architectural Stonework</p>
             </div>
-          </nav>
+          </div>
         </div>
       )}
     </header>
