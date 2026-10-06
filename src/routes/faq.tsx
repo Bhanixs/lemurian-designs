@@ -3,7 +3,7 @@ import { ArrowUpRight, Phone, MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { faqsData } from "@/data/stoneData";
-import heroImage from "@/assets/lemurian-hero.jpg";
+import faqHeroImage from "@/assets/faq-hero.jpg";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -27,8 +27,8 @@ function FaqPage() {
       {/* 1. FULLSCREEN HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={heroImage}
-          alt="Natural Stonework FAQs"
+          src={faqHeroImage}
+          alt="Natural Stonework Materials and Technical Library - Lemurian Designers"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
         <div className="hero-shade" />

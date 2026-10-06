@@ -489,6 +489,103 @@ img {
   border-color: var(--foreground);
 }
 
+/* Interactive Preview Selector Rail & Tabs */
+.selector-tabs-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.tab-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tab-pill-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--secondary);
+}
+
+.tab-pill-title {
+  color: inherit;
+}
+
+/* Theme Paper / Theme Base (Light background) */
+.theme-paper .tab-pill-btn,
+.theme-base .tab-pill-btn {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  color: #4a5548;
+}
+
+.theme-paper .tab-pill-btn:hover,
+.theme-base .tab-pill-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: var(--foreground);
+  color: var(--foreground);
+}
+
+.theme-paper .tab-pill-btn.active,
+.theme-base .tab-pill-btn.active {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
+.theme-paper .tab-pill-btn.active .tab-pill-num,
+.theme-base .tab-pill-btn.active .tab-pill-num {
+  color: var(--secondary);
+}
+
+/* Theme Dark (Forest dark background) */
+.theme-dark .tab-pill-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .tab-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+.theme-dark .tab-pill-btn.active {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--forest);
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .tab-pill-btn.active .tab-pill-num {
+  color: var(--forest);
+}
+
 .work-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;

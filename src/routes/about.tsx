@@ -4,7 +4,9 @@ import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { strengthsData } from "@/data/stoneData";
 import sculptureImage from "@/assets/stone-sculpture.jpg";
+import aboutHeroImage from "@/assets/about-hero.jpg";
 import heroImage from "@/assets/lemurian-hero.jpg";
+import masonryImage from "@/assets/stone-masonry.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -28,8 +30,8 @@ export function AboutPage() {
       {/* 1. FULLSCREEN HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={heroImage}
-          alt="Studio Stonework"
+          src={aboutHeroImage}
+          alt="Studio Stonework - Lemurian Designers Atelier"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
         <div className="hero-shade" />
@@ -81,9 +83,19 @@ export function AboutPage() {
         <div className="section-pad-inner">
           <p className="eyebrow">Studio Manifesto</p>
           <div className="manifesto-grid">
-            <h2 className="text-3xl sm:text-5xl font-display font-normal text-foreground">
-              Craftsmanship with an Architectural Perspective.
-            </h2>
+            <div>
+              <h2 className="text-3xl sm:text-5xl font-display font-normal text-foreground">
+                Craftsmanship with an Architectural Perspective.
+              </h2>
+              <div className="showcase-image-box mt-6 overflow-hidden rounded-sm shadow-md">
+                <img
+                  src={heroImage}
+                  alt="Architectural stone craftsmanship - Lemurian Designers"
+                  className="w-full h-[280px] sm:h-[340px] object-cover rounded-sm"
+                  loading="lazy"
+                />
+              </div>
+            </div>
             <div className="manifesto-note">
               <p>
                 Stone has the power to make a space feel grounded, enduring and memorable. Lemurian
@@ -184,6 +196,14 @@ export function AboutPage() {
                 We do more than install stone. We help shape how stone contributes to the
                 experience, character, and generational identity of a space.
               </p>
+              <div className="showcase-image-box mt-4 overflow-hidden rounded-sm shadow-md">
+                <img
+                  src={masonryImage}
+                  alt="Stone masonry craft distinction - Lemurian Designers"
+                  className="w-full h-[280px] sm:h-[340px] object-cover rounded-sm"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <div className="strength-list">
               {strengthsData.map((strength) => (

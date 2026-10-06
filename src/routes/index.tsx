@@ -282,8 +282,8 @@ function HomePage() {
                 onClick={() => setActiveServiceIdx(idx)}
                 className={`tab-pill-btn ${idx === activeServiceIdx ? "active" : ""}`}
               >
-                <span>{s.number}</span>
-                <span>{s.title}</span>
+                <span className="tab-pill-num">{s.number}</span>
+                <span className="tab-pill-title">{s.title}</span>
               </button>
             ))}
           </div>
@@ -379,8 +379,8 @@ function HomePage() {
                 onClick={() => setActiveProjectIdx(idx)}
                 className={`tab-pill-btn ${idx === activeProjectIdx ? "active" : ""}`}
               >
-                <span>{String(idx + 1).padStart(2, "0")}</span>
-                <span>{p.title}</span>
+                <span className="tab-pill-num">{String(idx + 1).padStart(2, "0")}</span>
+                <span className="tab-pill-title">{p.title}</span>
               </button>
             ))}
           </div>
@@ -480,8 +480,8 @@ function HomePage() {
                 onClick={() => setActiveIndustryIdx(idx)}
                 className={`tab-pill-btn ${idx === activeIndustryIdx ? "active" : ""}`}
               >
-                <span>{ind.number}</span>
-                <span>{ind.title}</span>
+                <span className="tab-pill-num">{ind.number}</span>
+                <span className="tab-pill-title">{ind.title}</span>
               </button>
             ))}
           </div>
@@ -575,8 +575,8 @@ function HomePage() {
                 onClick={() => setActiveProcessIdx(idx)}
                 className={`tab-pill-btn ${idx === activeProcessIdx ? "active" : ""}`}
               >
-                <span>{step.number}</span>
-                <span>{step.title}</span>
+                <span className="tab-pill-num">{step.number}</span>
+                <span className="tab-pill-title">{step.title}</span>
               </button>
             ))}
           </div>

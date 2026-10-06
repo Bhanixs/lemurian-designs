@@ -11,7 +11,7 @@ import {
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { industriesData } from "@/data/stoneData";
-import heroImage from "@/assets/lemurian-hero.jpg";
+import industriesHeroImage from "@/assets/industries-hero.jpg";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -37,8 +37,8 @@ function IndustriesPage() {
       {/* 1. FULLSCREEN HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={heroImage}
-          alt="Natural Stonework background"
+          src={industriesHeroImage}
+          alt="Natural Stonework across Sectors - Lemurian Designers"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
         <div className="hero-shade" />

@@ -16,6 +16,7 @@ import { useState, type FormEvent } from "react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/lemurian-hero.jpg";
+import contactHeroImage from "@/assets/contact-hero.jpg";
 
 interface ContactSearch {
   service?: string;
@@ -58,8 +59,8 @@ function ContactPage() {
       {/* 1. FULLSCREEN HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={heroImage}
-          alt="Consultation background"
+          src={contactHeroImage}
+          alt="Consultation background - Lemurian Designers Studio Entrance"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
         <div className="hero-shade" />

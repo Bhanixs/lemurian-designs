@@ -12,8 +12,7 @@ import {
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { processStepsData } from "@/data/stoneData";
-import masonryImage from "@/assets/stone-masonry.jpg";
-import heroImage from "@/assets/lemurian-hero.jpg";
+import processHeroImage from "@/assets/process-hero.jpg";
 
 export const Route = createFileRoute("/process")({
   head: () => ({
@@ -39,8 +38,8 @@ function ProcessPage() {
       {/* 1. FULLSCREEN HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={masonryImage}
-          alt="Disciplined Stonework Craftsmanship"
+          src={processHeroImage}
+          alt="Disciplined Stonework Craftsmanship - Precision Assembly"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
         <div className="hero-shade" />

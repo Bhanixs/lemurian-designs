@@ -8,6 +8,8 @@ import heroImage from "@/assets/lemurian-hero.jpg";
 import masonryImage from "@/assets/stone-masonry.jpg";
 import sculptureImage from "@/assets/stone-sculpture.jpg";
 import basinImage from "@/assets/stone-basin.jpg";
+import fountainImage from "@/assets/stone-fountain.jpg";
+import workHeroImage from "@/assets/work-hero.jpg";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -37,8 +39,8 @@ function WorkPage() {
       {/* SCREEN 1: HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={masonryImage}
-          alt="Stonework background"
+          src={workHeroImage}
+          alt="Terraced Stonework Amphitheater - Lemurian Designers Portfolio"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
         <div className="hero-shade" />
@@ -97,14 +99,14 @@ function WorkPage() {
                 className="showcase-image-box cursor-pointer"
                 onClick={() =>
                   setModalImage({
-                    src: heroImage,
+                    src: fountainImage,
                     title: "Custom Stone Fountain for Resort Courtyard",
                     caption: "South India · Hand-dressed natural granite and textured river stone",
                   })
                 }
               >
                 <img
-                  src={heroImage}
+                  src={fountainImage}
                   alt="Custom stone water feature in resort courtyard"
                   className="w-full h-auto object-cover rounded-sm shadow-md"
                 />

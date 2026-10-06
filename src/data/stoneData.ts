@@ -2,6 +2,17 @@ import masonryImage from "@/assets/stone-masonry.jpg";
 import sculptureImage from "@/assets/stone-sculpture.jpg";
 import basinImage from "@/assets/stone-basin.jpg";
 import heroImage from "@/assets/lemurian-hero.jpg";
+import kitchenImage from "@/assets/stone-kitchen.jpg";
+import fountainImage from "@/assets/stone-fountain.jpg";
+import engravingImage from "@/assets/stone-engraving.jpg";
+import industryCommercialImage from "@/assets/industry-commercial.jpg";
+import industryEcostayImage from "@/assets/industry-ecostay.jpg";
+import industryPublicImage from "@/assets/industry-public.jpg";
+import industriesHeroImage from "@/assets/industries-hero.jpg";
+import workHeroImage from "@/assets/work-hero.jpg";
+import aboutHeroImage from "@/assets/about-hero.jpg";
+import contactHeroImage from "@/assets/contact-hero.jpg";
+import faqHeroImage from "@/assets/faq-hero.jpg";
 import phase1Image from "@/assets/process-phase-1.jpg";
 import phase2Image from "@/assets/process-phase-2.jpg";
 import phase3Image from "@/assets/process-phase-3.jpg";
@@ -10,12 +21,32 @@ import phase5Image from "@/assets/process-phase-5.jpg";
 import phase6Image from "@/assets/process-phase-6.jpg";
 import phase7Image from "@/assets/process-phase-7.jpg";
 
+export {
+  masonryImage,
+  sculptureImage,
+  basinImage,
+  heroImage,
+  kitchenImage,
+  fountainImage,
+  engravingImage,
+  industryCommercialImage,
+  industryEcostayImage,
+  industryPublicImage,
+  industriesHeroImage,
+  workHeroImage,
+  aboutHeroImage,
+  contactHeroImage,
+  faqHeroImage,
+};
+
 export interface ServiceItem {
   number: string;
   title: string;
   serviceKey: string;
   tagline: string;
   description: string;
+  idealFor: string[];
+  seoKeywords: string[];
   image: string;
   inclusions: string[];
   ctaText: string;
@@ -26,21 +57,32 @@ export const servicesData: ServiceItem[] = [
     number: "01",
     title: "Stone Laying & Masonry",
     serviceKey: "Stone Laying & Masonry",
-    tagline: "Structural endurance and organic texture for distinguished facades & boundary walls.",
+    tagline: "Precision installation for floors, walls, facades, and landscapes.",
     description:
-      "We execute reliable and visually refined stone laying for residential, commercial, hospitality and outdoor projects. We carefully consider stone selection, pattern, alignment, joints, texture and overall integration with the surrounding space.",
+      "We handle end-to-end stone masonry—from substrate prep to final polishing—using granite, marble, sandstone, limestone, and engineered stone. Our team ensures perfect alignment, joint consistency, and structural integrity for residential, commercial, and hospitality projects.",
+    idealFor: [
+      "Villa flooring",
+      "Feature walls",
+      "Cladding",
+      "Paving",
+      "Retaining walls",
+      "Temple structures",
+    ],
+    seoKeywords: [
+      "stone laying services",
+      "stone masonry contractors",
+      "natural stone installation",
+      "granite flooring experts",
+      "sandstone cladding",
+    ],
     image: masonryImage,
     inclusions: [
-      "Natural stone wall construction",
-      "Random rubble stone masonry",
-      "Dry stone and bonded stonework",
-      "Stone cladding and feature walls",
-      "Garden walls and boundary walls",
-      "Retaining walls & slope protection",
-      "Stone pathways and walkways",
-      "Stone steps and entrance features",
-      "Resort landscape stonework",
-      "Decorative and structural installations",
+      "End-to-end substrate prep to final polishing",
+      "Granite, marble, sandstone & limestone",
+      "Perfect alignment & joint consistency",
+      "Residential, commercial & hospitality",
+      "Retaining walls & structural masonry",
+      "Exterior facades & perimeter walling",
     ],
     ctaText: "Enquire About Masonry",
   },
@@ -48,19 +90,31 @@ export const servicesData: ServiceItem[] = [
     number: "02",
     title: "Stone Engraving",
     serviceKey: "Stone Engraving",
-    tagline: "Carved identity, monumental scripts, and intricate bas-relief inscriptions.",
+    tagline: "Personalized inscriptions, logos, and decorative patterns carved in stone.",
     description:
-      "Add meaning and identity to your space with custom stone engraving. Every engraving is planned according to the stone type, design style, scale and intended location.",
-    image: sculptureImage,
+      "Using laser, CNC, and hand-engraving techniques, we create memorial plaques, inauguration stones, signage, and artistic engravings on granite, marble, and sandstone. Every line is crisp, deep, and built to last outdoors and indoors.",
+    idealFor: [
+      "Nameplates",
+      "Commemorative stones",
+      "Corporate logos",
+      "Temple inscriptions",
+      "Memorial markers",
+    ],
+    seoKeywords: [
+      "stone engraving services",
+      "laser engraved stone",
+      "custom stone nameplates",
+      "granite engraving",
+      "memorial stone carving",
+    ],
+    image: engravingImage,
     inclusions: [
-      "Names and commemorative lettering",
-      "Logos and corporate brand marks",
-      "Memorial inscriptions & crests",
-      "Directional and entrance welcome signs",
-      "Decorative floral & geometric patterns",
-      "Traditional & temple motifs",
-      "Estate names and villa property signage",
-      "Custom artwork on polished stone surfaces",
+      "Laser, CNC & hand-engraved techniques",
+      "Crisp, deep weather-defying lettering",
+      "Granite, marble & sandstone surfaces",
+      "Commemorative & inauguration plaques",
+      "Corporate brand marks & identity signs",
+      "Sacred temple inscriptions & markers",
     ],
     ctaText: "Discuss Custom Engraving",
   },
@@ -68,20 +122,31 @@ export const servicesData: ServiceItem[] = [
     number: "03",
     title: "Stone Sculpting",
     serviceKey: "Stone Sculpting",
-    tagline: "Bespoke monolithic art and architectural forms hand-carved in granite.",
+    tagline: "Hand-carved and CNC-sculpted art for sacred, decorative, and architectural use.",
     description:
-      "Our stone sculpting service turns natural stone into expressive forms, artistic installations and architectural details. From a simple concept to a detailed custom piece, we help develop designs that suit the character of the project.",
+      "Our sculptors blend traditional Chola-era craftsmanship with 3D modeling to produce deities, figurines, relief panels, and abstract forms in marble, granite, and soft stones. Each piece is a narrative in stone.",
+    idealFor: [
+      "Temple idols",
+      "Garden sculptures",
+      "Wall reliefs",
+      "Heritage restorations",
+      "Art installations",
+    ],
+    seoKeywords: [
+      "stone sculpting services",
+      "marble sculpture artists",
+      "CNC stone carving",
+      "temple sculpture makers",
+      "custom stone art",
+    ],
     image: sculptureImage,
     inclusions: [
-      "Custom stone sculptures",
-      "Abstract stone architectural art",
-      "Traditional and cultural motifs",
-      "Fauna & flora-inspired sculptural forms",
-      "Carved decorative pillars and columns",
-      "Relief stone murals & friezes",
-      "Courtyard & garden centerpieces",
-      "Resort and hospitality installations",
-      "Bespoke architectural focal elements",
+      "Traditional Chola-era heritage craftsmanship",
+      "Advanced 3D modeling & CNC precision",
+      "Sacred temple idols & deity carving",
+      "Bespoke architectural wall reliefs",
+      "Courtyard & garden statement sculptures",
+      "Heritage restorations & conservation",
     ],
     ctaText: "Commission a Sculpture",
   },
@@ -89,83 +154,168 @@ export const servicesData: ServiceItem[] = [
     number: "04",
     title: "Resort & Landscape Stone Works",
     serviceKey: "Resort & Landscape Stone Works",
-    tagline: "Harmonizing raw earth with luxury retreats and tropical courtyard environments.",
+    tagline: "Turnkey stone solutions for hospitality, resorts, and outdoor spaces.",
     description:
-      "Natural stone adds a sense of luxury, authenticity and permanence to resort and landscape environments. We create stone features that blend with gardens, architecture, water elements and the surrounding landscape.",
-    image: heroImage,
+      "From stone pathways and water bodies to pergolas, seating, and themed facades—we design and execute landscape stonework that complements nature and elevates guest experience.",
+    idealFor: [
+      "Resorts",
+      "Heritage hotels",
+      "Villa landscapes",
+      "Public parks",
+      "Temple complexes",
+    ],
+    seoKeywords: [
+      "resort stone work",
+      "landscape stone contractors",
+      "outdoor stone features",
+      "hospitality stone design",
+      "natural stone landscaping",
+    ],
+    image: industriesHeroImage,
     inclusions: [
-      "Flagstone & rustic stone pathways",
-      "Garden borders and stone edging",
-      "Textured feature walls",
-      "Grand estate entrance structures",
-      "Outdoor lounge & sit-out stonework",
-      "Poolside natural stone elements & copings",
-      "Landscape steps and terracing",
-      "Hand-chiseled stone platforms",
-      "Decorative boulders and installations",
-      "Rustic and nature-inspired outdoor spaces",
+      "Turnkey hospitality stone master planning",
+      "Flagstone pathways & rustic walkways",
+      "Pergolas, stone seating & outdoor lounges",
+      "Themed facades & grand entrance portals",
+      "Pool copings & natural stone surrounds",
+      "Subterranean foundations & drainage integration",
     ],
     ctaText: "Explore Resort Stonework",
   },
   {
     number: "05",
-    title: "Custom Stone Benches",
-    serviceKey: "Custom Stone Benches",
-    tagline: "Monolithic, weather-defying seating carved for public and private sanctuaries.",
+    title: "Custom Stone Kitchen Works",
+    serviceKey: "Custom Stone Kitchen Works",
+    tagline: "Bespoke countertops, islands, backsplashes, and sinks crafted in stone.",
     description:
-      "Create comfortable and memorable outdoor seating with custom stone benches. Benches can be designed in simple, rustic, contemporary or sculptural styles based on your requirements.",
-    image: masonryImage,
-    inclusions: [
-      "Botanical gardens & private estates",
-      "Resort sit-out & veranda areas",
-      "Inner courtyards and atriums",
-      "Public parks & promenades",
-      "Poolside and reflection decks",
-      "Heritage and sacred sanctuary grounds",
-      "Commercial office plaza landscapes",
-      "Heavy-use civic spaces",
+      "We fabricate kitchen surfaces in granite, quartzite, marble, and compact stone—cut to your layout, finished to your preference (honed, polished, leathered), and sealed for daily use.",
+    idealFor: ["Luxury homes", "Boutique hotels", "Chef’s kitchens", "F&B outlets"],
+    seoKeywords: [
+      "custom stone kitchen countertops",
+      "granite kitchen fabrication",
+      "marble island makers",
+      "stone backsplash installation",
+      "kitchen stone contractors",
     ],
-    ctaText: "Order Custom Benches",
+    image: kitchenImage,
+    inclusions: [
+      "Monolithic kitchen islands & countertops",
+      "Granite, quartzite, marble & compact stone",
+      "Honed, polished, and leathered textures",
+      "Integrated seamless backsplashes & sinks",
+      "Mitred edges & invisible joinery details",
+      "Food-grade sealing for daily culinary life",
+    ],
+    ctaText: "Order Custom Kitchen Stonework",
   },
   {
     number: "06",
-    title: "Stone Fountains & Water Features",
-    serviceKey: "Stone Fountains & Water Features",
-    tagline: "Acoustic serenity and cascading water over hand-dressed granite surfaces.",
+    title: "Stone Fountain & Water Features",
+    serviceKey: "Stone Fountain & Water Features",
+    tagline: "Architectural fountains, cascades, and interactive water art.",
     description:
-      "A well-designed stone fountain can become the focal point of a garden, courtyard, resort or entrance area. Our designs focus on proportion, water movement, material texture and the atmosphere you want to create.",
-    image: heroImage,
+      "Our water features combine hydraulic engineering with stone artistry—creating serene centrepieces for lobbies, courtyards, gardens, and spiritual spaces. Materials include granite, sandstone, marble, and river stone.",
+    idealFor: [
+      "Hotel lobbies",
+      "Temple tanks",
+      "Villa courtyards",
+      "Public plazas",
+      "Wellness centres",
+    ],
+    seoKeywords: [
+      "stone fountain makers",
+      "custom water features",
+      "outdoor stone fountains",
+      "temple water body contractors",
+      "landscape water art",
+    ],
+    image: fountainImage,
     inclusions: [
-      "Monolithic natural stone fountains",
-      "Wall-mounted weeping stone water features",
-      "Garden fountain basins",
-      "Central courtyard reflecting pools",
-      "Resort cascade & water walls",
-      "Shallow bowl-style water vessels",
-      "Sculptural water spout installations",
-      "Custom granite basins and overflow channels",
+      "Hydraulic engineering meets stone craft",
+      "Granite, sandstone, marble & river stone",
+      "Central courtyard cascading fountains",
+      "Wall-mounted weeping stone water walls",
+      "Sacred temple tanks & reflection ponds",
+      "Hand-chiseled spillways & spout accents",
     ],
     ctaText: "Create a Water Feature",
   },
   {
     number: "07",
-    title: "Custom Stone Washbasins",
-    serviceKey: "Custom Stone Washbasins",
-    tagline: "Organic vessels carved from singular river boulders and raw granite monoliths.",
+    title: "Custom Stone Washbasins & Bathtubs",
+    serviceKey: "Custom Stone Washbasins & Bathtubs",
+    tagline: "Monolithic basins and tubs carved from single blocks of stone.",
     description:
-      "Bring the beauty of natural stone into bathrooms, outdoor wash areas and hospitality spaces. Each washbasin can be customized according to the required size, shape, stone type, finish and installation style.",
+      "Each basin or bathtub is sculpted to ergonomic contours, finished smooth, and sealed for water resistance. Choose from matte, polished, or textured finishes in granite, marble, or river stone.",
+    idealFor: ["Luxury bathrooms", "Heritage homes", "Boutique hotels", "Spa retreats"],
+    seoKeywords: [
+      "custom stone washbasins",
+      "monolithic stone bathtubs",
+      "granite bathroom sinks",
+      "marble tub makers",
+      "bespoke stone bath fixtures",
+    ],
     image: basinImage,
     inclusions: [
-      "Luxury villa master bathrooms",
-      "Boutique resort open-air powder suites",
-      "Private farmhouses & nature retreats",
-      "Holistic spa and wellness sanctuaries",
-      "Courtyard garden hand-wash alcoves",
-      "Fine dining restaurants and cafés",
-      "Eco-stays and off-grid sanctuaries",
-      "Custom wall-mount or pedestal vessels",
+      "Carved from single monolithic stone blocks",
+      "Ergonomic contours & water-resistant sealing",
+      "Matte, honed, or tactile chiseled finishes",
+      "Granite, marble & river boulder vessels",
+      "Freestanding soaker tubs for spa sanctuaries",
+      "Custom vanity countertops & drain integration",
     ],
-    ctaText: "Custom Washbasin Enquiry",
+    ctaText: "Custom Basin & Tub Enquiry",
+  },
+];
+
+export const whyLemurianData = [
+  {
+    title: "Master Artisans + Modern Tech",
+    description: "Hand-carving heritage skills meets CNC precision.",
+  },
+  {
+    title: "End-to-End Execution",
+    description: "Design → fabrication → installation → aftercare.",
+  },
+  {
+    title: "Material Expertise",
+    description: "Granite, marble, sandstone, limestone, quartzite, engineered stone.",
+  },
+  {
+    title: "Pan-India Delivery",
+    description: "Projects across Tamil Nadu, Puducherry, Karnataka, and beyond.",
+  },
+  {
+    title: "Sustainability Focus",
+    description: "Low-waste fabrication, local sourcing, and eco-friendly sealing.",
+  },
+];
+
+export const servicesProcessSteps = [
+  {
+    step: "01",
+    title: "Consultation & Site Visit",
+    description: "Understand your vision, space, and stone preferences.",
+  },
+  {
+    step: "02",
+    title: "Design & 3D Visualization",
+    description: "CAD drawings, material samples, and finish mockups.",
+  },
+  {
+    step: "03",
+    title: "Fabrication",
+    description: "Hand-carving, CNC machining, engraving, and polishing in our workshop.",
+  },
+  {
+    step: "04",
+    title: "Installation",
+    description: "Skilled laying, waterproofing, jointing, and final finishing on-site.",
+  },
+  {
+    step: "05",
+    title: "Aftercare Guidance",
+    description: "Sealing, cleaning, and maintenance tips for long-term beauty.",
   },
 ];
 
@@ -183,6 +333,19 @@ export interface ProjectItem {
 }
 
 export const portfolioProjects: ProjectItem[] = [
+  {
+    id: "weathered-monolith-basin",
+    title: "Weathered Monolith Vessel",
+    category: "Handmade Washbasin · Hospitality",
+    image: basinImage,
+    aspect: "landscape",
+    location: "Wayanad, Kerala",
+    materials: "Submerged River Stone Boulder",
+    scope: "Core extraction, hand-hollowed basin interior, honed bowl with natural crust",
+    description:
+      "Each vessel preserves millions of years of natural water weathering on its exterior while offering a silky honed interior for five-star resort suites.",
+    dimensions: "72cm x 54cm x 18cm basin",
+  },
   {
     id: "grounded-passage",
     title: "Grounded Passage & Masonry",
@@ -210,23 +373,10 @@ export const portfolioProjects: ProjectItem[] = [
     dimensions: "2.4m height, 1.1m base diameter",
   },
   {
-    id: "weathered-monolith-basin",
-    title: "Weathered Monolith Vessel",
-    category: "Handmade Washbasin · Hospitality",
-    image: basinImage,
-    aspect: "landscape",
-    location: "Wayanad, Kerala",
-    materials: "Submerged River Stone Boulder",
-    scope: "Core extraction, hand-hollowed basin interior, honed bowl with natural crust",
-    description:
-      "Each vessel preserves millions of years of natural water weathering on its exterior while offering a silky honed interior for five-star resort suites.",
-    dimensions: "72cm x 54cm x 18cm basin",
-  },
-  {
     id: "resort-fountain-spotlight",
     title: "Courtyard Water Feature & Fountain",
     category: "Landscape Stonework & Water Features",
-    image: heroImage,
+    image: fountainImage,
     aspect: "landscape",
     location: "Madurai, South India",
     materials: "Hand-dressed Natural Granite & River Pebbles",
@@ -240,6 +390,22 @@ export const portfolioProjects: ProjectItem[] = [
 export const industriesData = [
   {
     number: "01",
+    title: "Commercial Spaces",
+    tagline: "Corporate headquarters, cultural institutions, fine dining & retail.",
+    image: industryCommercialImage,
+    highlight: "High-traffic durability coupled with striking brand permanence.",
+    items: [
+      "Refined corporate office landscapes & atriums",
+      "Restaurant & café open-air dining courtyards",
+      "Impressive retail entrances & carved thresholds",
+      "Bespoke engraved brand signage & company crests",
+      "Plaza focal features and acoustic water installations",
+      "Durable outdoor stone seating engineered for heavy use",
+      "Architectural feature facades with deep shadow reveals",
+    ],
+  },
+  {
+    number: "02",
     title: "Residential Projects",
     tagline: "Private estates, contemporary villas, and ancestral garden homes.",
     image: masonryImage,
@@ -256,10 +422,10 @@ export const industriesData = [
     ],
   },
   {
-    number: "02",
+    number: "03",
     title: "Resorts & Hotels",
     tagline: "Bespoke hospitality destinations, eco-luxury retreats & boutique stays.",
-    image: heroImage,
+    image: industriesHeroImage,
     highlight: "Evoking timeless sense of place with tactile geological luxury.",
     items: [
       "Comprehensive resort master-landscape stonework",
@@ -273,26 +439,10 @@ export const industriesData = [
     ],
   },
   {
-    number: "03",
-    title: "Commercial Spaces",
-    tagline: "Corporate headquarters, cultural institutions, fine dining & retail.",
-    image: sculptureImage,
-    highlight: "High-traffic durability coupled with striking brand permanence.",
-    items: [
-      "Refined corporate office landscapes & atriums",
-      "Restaurant & café open-air dining courtyards",
-      "Impressive retail entrances & carved thresholds",
-      "Bespoke engraved brand signage & company crests",
-      "Plaza focal features and acoustic water installations",
-      "Durable outdoor stone seating engineered for heavy use",
-      "Architectural feature facades with deep shadow reveals",
-    ],
-  },
-  {
     number: "04",
     title: "Farms & Eco-Stays",
     tagline: "Agricultural retreats, nature sanctuaries & off-grid homesteads.",
-    image: basinImage,
+    image: industryEcostayImage,
     highlight: "Dry-stone traditions celebrating raw unadulterated terrain.",
     items: [
       "Rustic dry-stone retaining and boundary structures",
@@ -308,7 +458,7 @@ export const industriesData = [
     number: "05",
     title: "Public & Community",
     tagline: "Civic parks, heritage spaces, civic memorials & sacred gardens.",
-    image: sculptureImage,
+    image: industryPublicImage,
     highlight: "Multi-generational permanence engineered for collective memory.",
     items: [
       "Public park promenades & vandal-proof seating",
