@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { strengthsData } from "@/data/stoneData";
 import sculptureImage from "@/assets/stone-sculpture.jpg";
 import aboutHeroImage from "@/assets/about-hero.jpg";
-import heroImage from "@/assets/lemurian-hero.jpg";
-import masonryImage from "@/assets/stone-masonry.jpg";
+import manifestoImage from "@/assets/about-manifesto.jpg";
+import strengthsImage from "@/assets/about-strengths.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -89,7 +89,7 @@ export function AboutPage() {
               </h2>
               <div className="showcase-image-box mt-6 overflow-hidden rounded-sm shadow-md">
                 <img
-                  src={heroImage}
+                  src={manifestoImage}
                   alt="Architectural stone craftsmanship - Lemurian Designers"
                   className="w-full h-[280px] sm:h-[340px] object-cover rounded-sm"
                   loading="lazy"
@@ -198,7 +198,7 @@ export function AboutPage() {
               </p>
               <div className="showcase-image-box mt-4 overflow-hidden rounded-sm shadow-md">
                 <img
-                  src={masonryImage}
+                  src={strengthsImage}
                   alt="Stone masonry craft distinction - Lemurian Designers"
                   className="w-full h-[280px] sm:h-[340px] object-cover rounded-sm"
                   loading="lazy"

@@ -1,18 +1,15 @@
 import masonryImage from "@/assets/stone-masonry.jpg";
+import stoneLaying from "@/assets/stoneLayingMasonry.png";
 import sculptureImage from "@/assets/stone-sculpture.jpg";
 import basinImage from "@/assets/stone-basin.jpg";
-import heroImage from "@/assets/lemurian-hero.jpg";
 import kitchenImage from "@/assets/stone-kitchen.jpg";
 import fountainImage from "@/assets/stone-fountain.jpg";
 import engravingImage from "@/assets/stone-engraving.jpg";
+import resortLandscapeImage from "@/assets/resort-landscape.jpg";
 import industryCommercialImage from "@/assets/industry-commercial.jpg";
+import industryResidentialImage from "@/assets/industry-residential.jpg";
 import industryEcostayImage from "@/assets/industry-ecostay.jpg";
 import industryPublicImage from "@/assets/industry-public.jpg";
-import industriesHeroImage from "@/assets/industries-hero.jpg";
-import workHeroImage from "@/assets/work-hero.jpg";
-import aboutHeroImage from "@/assets/about-hero.jpg";
-import contactHeroImage from "@/assets/contact-hero.jpg";
-import faqHeroImage from "@/assets/faq-hero.jpg";
 import phase1Image from "@/assets/process-phase-1.jpg";
 import phase2Image from "@/assets/process-phase-2.jpg";
 import phase3Image from "@/assets/process-phase-3.jpg";
@@ -25,18 +22,14 @@ export {
   masonryImage,
   sculptureImage,
   basinImage,
-  heroImage,
   kitchenImage,
   fountainImage,
   engravingImage,
+  resortLandscapeImage,
   industryCommercialImage,
+  industryResidentialImage,
   industryEcostayImage,
   industryPublicImage,
-  industriesHeroImage,
-  workHeroImage,
-  aboutHeroImage,
-  contactHeroImage,
-  faqHeroImage,
 };
 
 export interface ServiceItem {
@@ -75,7 +68,7 @@ export const servicesData: ServiceItem[] = [
       "granite flooring experts",
       "sandstone cladding",
     ],
-    image: masonryImage,
+    image: stoneLaying,
     inclusions: [
       "End-to-end substrate prep to final polishing",
       "Granite, marble, sandstone & limestone",
@@ -171,7 +164,7 @@ export const servicesData: ServiceItem[] = [
       "hospitality stone design",
       "natural stone landscaping",
     ],
-    image: industriesHeroImage,
+    image: resortLandscapeImage,
     inclusions: [
       "Turnkey hospitality stone master planning",
       "Flagstone pathways & rustic walkways",
@@ -408,7 +401,7 @@ export const industriesData = [
     number: "02",
     title: "Residential Projects",
     tagline: "Private estates, contemporary villas, and ancestral garden homes.",
-    image: masonryImage,
+    image: industryResidentialImage,
     highlight: "Creating grounded, enduring spaces that age with dignity.",
     items: [
       "Garden walls & boundary stone enclosures",
@@ -425,7 +418,7 @@ export const industriesData = [
     number: "03",
     title: "Resorts & Hotels",
     tagline: "Bespoke hospitality destinations, eco-luxury retreats & boutique stays.",
-    image: industriesHeroImage,
+    image: resortLandscapeImage,
     highlight: "Evoking timeless sense of place with tactile geological luxury.",
     items: [
       "Comprehensive resort master-landscape stonework",

@@ -16,8 +16,8 @@ import {
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { servicesData, whyLemurianData, servicesProcessSteps } from "@/data/stoneData";
-import heroImage from "@/assets/stone-basin.jpg";
-import workHeroImage from "@/assets/work-hero.jpg";
+import servicesHeroImage from "@/assets/services-hero.jpg";
+import materialBreakImage from "@/assets/material-break.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -49,7 +49,7 @@ function ServicesPage() {
       {/* 1. FULLSCREEN HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={heroImage}
+          src={servicesHeroImage}
           alt="Natural Stonework background - Lemurian Designers"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
@@ -274,13 +274,13 @@ function ServicesPage() {
             })}
 
             {/* 6th Studio Feature Card */}
-            <div className="p-6 bg-forest text-white rounded-sm flex flex-col justify-between">
+            <div className="p-6 bg-forest text-red-400 border border-border rounded-sm flex flex-col justify-between">
               <div>
-                <div className="w-10 h-10 rounded-full bg-white/10 text-secondary flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-secondary/15 text-secondary flex items-center justify-center mb-4">
                   <Compass size={19} />
                 </div>
-                <h3 className="font-display text-xl text-white mb-2">Puducherry Craft Studio</h3>
-                <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                <h3 className="font-display text-xl text-black mb-2">Puducherry Craft Studio</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   Visit our carving facility to inspect stone slabs, review chiseling textures, and
                   align on custom scale mockups with our master sculptors.
                 </p>
@@ -343,7 +343,7 @@ function ServicesPage() {
       {/* 5. MATERIAL BREAK QUOTE */}
       <section className="material-break">
         <img
-          src={workHeroImage}
+          src={materialBreakImage}
           loading="lazy"
           width={1920}
           height={1280}

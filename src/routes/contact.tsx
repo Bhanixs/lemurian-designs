@@ -15,7 +15,6 @@ import {
 import { useState, type FormEvent } from "react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroImage from "@/assets/lemurian-hero.jpg";
 import contactHeroImage from "@/assets/contact-hero.jpg";
 
 interface ContactSearch {

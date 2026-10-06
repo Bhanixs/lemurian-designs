@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ImageModal } from "@/components/ImageModal";
-import heroImage from "@/assets/lemurian-hero.jpg";
 import masonryImage from "@/assets/stone-masonry.jpg";
 import sculptureImage from "@/assets/stone-sculpture.jpg";
 import basinImage from "@/assets/stone-basin.jpg";
