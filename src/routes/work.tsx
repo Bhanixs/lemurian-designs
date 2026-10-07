@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ImageModal } from "@/components/ImageModal";
-import masonryImage from "@/assets/stone-masonry.jpg";
-import sculptureImage from "@/assets/stone-sculpture.jpg";
-import basinImage from "@/assets/stone-basin.jpg";
-import fountainImage from "@/assets/stone-fountain.jpg";
+import masonryImage from "@/assets/stone-masonry-2.png";
+import sculptureImage from "@/assets/stone-sculpture-2.jpg";
+import basinImage from "@/assets/stone-basin-2.png";
+import fountainImage from "@/assets/stone-fountain-2.png";
 import workHeroImage from "@/assets/work-hero.jpg";
 
 export const Route = createFileRoute("/work")({

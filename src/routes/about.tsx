@@ -3,7 +3,7 @@ import { ArrowUpRight, CheckCircle2, Eye, Compass, MapPin, Phone, Mail, Clock } 
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { strengthsData } from "@/data/stoneData";
-import sculptureImage from "@/assets/stone-sculpture.jpg";
+import sculptureImage from "@/assets/stone-sculpture-3.png";
 import aboutHeroImage from "@/assets/about-hero.jpg";
 import manifestoImage from "@/assets/about-manifesto.jpg";
 import strengthsImage from "@/assets/about-strengths.jpg";

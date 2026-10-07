@@ -1,11 +1,13 @@
 import masonryImage from "@/assets/stone-masonry.jpg";
 import stoneLaying from "@/assets/stoneLayingMasonry.png";
-import sculptureImage from "@/assets/stone-sculpture.jpg";
+import sculptureImage from "@/assets/stone-sculpture-4.png";
+import sculptureImage2 from "@/assets/stone-sculpture-3.png";
 import basinImage from "@/assets/stone-basin.jpg";
+import basinImage2 from "@/assets/stone-basin-3.png";
 import kitchenImage from "@/assets/stone-kitchen.jpg";
 import fountainImage from "@/assets/stone-fountain.jpg";
 import engravingImage from "@/assets/stone-engraving.jpg";
-import resortLandscapeImage from "@/assets/resort-landscape.jpg";
+import resortLandscapeImage from "@/assets/resort-landscape-2.jpg";
 import industryCommercialImage from "@/assets/industry-commercial.jpg";
 import industryResidentialImage from "@/assets/industry-residential.jpg";
 import industryEcostayImage from "@/assets/industry-ecostay.jpg";
@@ -327,19 +329,6 @@ export interface ProjectItem {
 
 export const portfolioProjects: ProjectItem[] = [
   {
-    id: "weathered-monolith-basin",
-    title: "Weathered Monolith Vessel",
-    category: "Handmade Washbasin · Hospitality",
-    image: basinImage,
-    aspect: "landscape",
-    location: "Wayanad, Kerala",
-    materials: "Submerged River Stone Boulder",
-    scope: "Core extraction, hand-hollowed basin interior, honed bowl with natural crust",
-    description:
-      "Each vessel preserves millions of years of natural water weathering on its exterior while offering a silky honed interior for five-star resort suites.",
-    dimensions: "72cm x 54cm x 18cm basin",
-  },
-  {
     id: "grounded-passage",
     title: "Grounded Passage & Masonry",
     category: "Stone Masonry · Feature & Boundary Walls",
@@ -351,19 +340,6 @@ export const portfolioProjects: ProjectItem[] = [
     description:
       "A continuous dry-stone boundary wall and integrated amphitheater staircase built to harmonize with natural topography without invasive mortar joints.",
     dimensions: "1,800 sq.ft facade area, 45m pathway",
-  },
-  {
-    id: "continuum-sculpture",
-    title: "Continuum Granite Form",
-    category: "Granite · Hand-Sculpted Art",
-    image: sculptureImage,
-    aspect: "portrait",
-    location: "Bengaluru, Karnataka",
-    materials: "Dense Jet-Black Natural Granite",
-    scope: "Conceptual 3D modeling, hand-chisel carving, fine fluting & satin polish",
-    description:
-      "An evocative monolithic sculpture exploring continuity and weightlessness, carved from a single 6-tonne granite block into a spiraling courtyard centerpiece.",
-    dimensions: "2.4m height, 1.1m base diameter",
   },
   {
     id: "resort-fountain-spotlight",
@@ -378,11 +354,52 @@ export const portfolioProjects: ProjectItem[] = [
       "A tiered fountain engineered with gentle ripple dynamics, serving as the central acoustic and meditative focal point of a tropical resort sanctuary.",
     dimensions: "4.5m pool diameter, 1.8m central tier",
   },
+  {
+    id: "weathered-monolith-basin",
+    title: "Weathered Monolith Vessel",
+    category: "Handmade Washbasin · Hospitality",
+    image: basinImage2,
+    aspect: "landscape",
+    location: "Wayanad, Kerala",
+    materials: "Submerged River Stone Boulder",
+    scope: "Core extraction, hand-hollowed basin interior, honed bowl with natural crust",
+    description:
+      "Each vessel preserves millions of years of natural water weathering on its exterior while offering a silky honed interior for five-star resort suites.",
+    dimensions: "72cm x 54cm x 18cm basin",
+  },
+  {
+    id: "continuum-sculpture",
+    title: "Continuum Granite Form",
+    category: "Granite · Hand-Sculpted Art",
+    image: sculptureImage2,
+    aspect: "portrait",
+    location: "Bengaluru, Karnataka",
+    materials: "Dense Jet-Black Natural Granite",
+    scope: "Conceptual 3D modeling, hand-chisel carving, fine fluting & satin polish",
+    description:
+      "An evocative monolithic sculpture exploring continuity and weightlessness, carved from a single 6-tonne granite block into a spiraling courtyard centerpiece.",
+    dimensions: "2.4m height, 1.1m base diameter",
+  },
 ];
 
 export const industriesData = [
   {
     number: "01",
+    title: "Public & Community",
+    tagline: "Civic parks, heritage spaces, civic memorials & sacred gardens.",
+    image: industryPublicImage,
+    highlight: "Multi-generational permanence engineered for collective memory.",
+    items: [
+      "Public park promenades & vandal-proof seating",
+      "Memorial installations & commemorative stone plaques",
+      "Directional, interpretive & civic civic signage",
+      "Heavy-duty stone benches built to resist weather and age",
+      "Heritage & temple sculptures preserving classic motifs",
+      "Landscape retaining structures & civic amphitheaters",
+    ],
+  },
+  {
+    number: "02",
     title: "Commercial Spaces",
     tagline: "Corporate headquarters, cultural institutions, fine dining & retail.",
     image: industryCommercialImage,
@@ -398,7 +415,7 @@ export const industriesData = [
     ],
   },
   {
-    number: "02",
+    number: "03",
     title: "Residential Projects",
     tagline: "Private estates, contemporary villas, and ancestral garden homes.",
     image: industryResidentialImage,
@@ -415,7 +432,7 @@ export const industriesData = [
     ],
   },
   {
-    number: "03",
+    number: "04",
     title: "Resorts & Hotels",
     tagline: "Bespoke hospitality destinations, eco-luxury retreats & boutique stays.",
     image: resortLandscapeImage,
@@ -432,7 +449,7 @@ export const industriesData = [
     ],
   },
   {
-    number: "04",
+    number: "05",
     title: "Farms & Eco-Stays",
     tagline: "Agricultural retreats, nature sanctuaries & off-grid homesteads.",
     image: industryEcostayImage,
@@ -445,21 +462,6 @@ export const industriesData = [
       "Campfire circles & curved sit-out stone benches",
       "Cascading bio-pool water features and check dams",
       "Traditional regional stonework using hyper-local boulders",
-    ],
-  },
-  {
-    number: "05",
-    title: "Public & Community",
-    tagline: "Civic parks, heritage spaces, civic memorials & sacred gardens.",
-    image: industryPublicImage,
-    highlight: "Multi-generational permanence engineered for collective memory.",
-    items: [
-      "Public park promenades & vandal-proof seating",
-      "Memorial installations & commemorative stone plaques",
-      "Directional, interpretive & civic civic signage",
-      "Heavy-duty stone benches built to resist weather and age",
-      "Heritage & temple sculptures preserving classic motifs",
-      "Landscape retaining structures & civic amphitheaters",
     ],
   },
 ];
