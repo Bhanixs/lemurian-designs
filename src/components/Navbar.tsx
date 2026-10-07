@@ -7,7 +7,7 @@ import { Logo } from "@/components/Logo";
 export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
     <Link to="/" className="wordmark" aria-label="Lemurian Designers Home">
-      <Logo size={compact ? 44 : 34} showWordmark={!compact} />
+      <Logo size={compact ? 44 : 36} showWordmark={!compact} />
     </Link>
   );
 }
@@ -161,7 +161,10 @@ export function Navbar({ theme = "dark" }: { theme?: "dark" | "light" | "auto" }
                 </a>
               </div>
 
-              <p className="mobile-drawer-note">Lemurian Designers • Architectural Stonework</p>
+              <div className="flex items-center gap-2.5 pt-2">
+                <Logo size={24} showWordmark={false} />
+                <p className="mobile-drawer-note my-0">Lemurian Designers • Architectural Stonework</p>
+              </div>
             </div>
           </div>
         </div>

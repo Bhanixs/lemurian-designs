@@ -15,6 +15,7 @@ import {
 import { useState, type FormEvent } from "react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Logo } from "@/components/Logo";
 import contactHeroImage from "@/assets/contact-hero.jpg";
 
 interface ContactSearch {
@@ -134,6 +135,9 @@ function ContactPage() {
             <div>
               {submitted ? (
                 <div className="form-success-box">
+                  <div className="mb-4">
+                    <Logo size={42} showWordmark={true} />
+                  </div>
                   <h3>Consultation Request Received</h3>
                   <p>
                     Thank you for reaching out to Lemurian Designers. Our senior stonework

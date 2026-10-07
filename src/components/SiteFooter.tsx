@@ -10,9 +10,12 @@ export function SiteFooter() {
   return (
     <footer className="footer section-pad">
       <div className="footer-top">
-        <p className="eyebrow" style={{ color: "var(--secondary)" }}>
-          Where Natural Stone Becomes Design
-        </p>
+        <div className="flex items-center gap-3 mb-4">
+          <Logo size={44} showWordmark={false} />
+          <p className="eyebrow my-0" style={{ color: "var(--secondary)" }}>
+            Where Natural Stone Becomes Design
+          </p>
+        </div>
         <h2 style={{ fontSize: "clamp(2.6rem, 5.2vw, 6rem)", margin: "1.2rem 0" }}>
           Let’s create something
           <br />
@@ -40,7 +43,7 @@ export function SiteFooter() {
       </div>
 
       <div className="footer-bottom" style={{ marginTop: "2rem", paddingBottom: "0.5rem" }}>
-        <Logo size={36} showWordmark={true} />
+        <Logo size={38} showWordmark={true} />
         <p>Where Natural Stone Becomes Design · Lemurian Designers</p>
         <button
           type="button"

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, CheckCircle2, Eye, Compass, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Logo } from "@/components/Logo";
 import { strengthsData } from "@/data/stoneData";
 import sculptureImage from "@/assets/stone-sculpture-3.png";
 import aboutHeroImage from "@/assets/about-hero.jpg";
@@ -81,7 +82,10 @@ export function AboutPage() {
       {/* 2. PHILOSOPHY & MANIFESTO */}
       <section id="about-manifesto" className="screen-section theme-paper">
         <div className="section-pad-inner">
-          <p className="eyebrow">Studio Manifesto</p>
+          <div className="flex items-center gap-3 mb-2">
+            <Logo size={28} showWordmark={false} />
+            <p className="eyebrow my-0">Studio Manifesto</p>
+          </div>
           <div className="manifesto-grid">
             <div>
               <h2 className="text-3xl sm:text-5xl font-display font-normal text-foreground">

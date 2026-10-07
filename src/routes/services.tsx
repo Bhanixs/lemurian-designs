@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Logo } from "@/components/Logo";
 import { servicesData, whyLemurianData, servicesProcessSteps } from "@/data/stoneData";
 import servicesHeroImage from "@/assets/services-hero.jpg";
 import materialBreakImage from "@/assets/material-break.jpg";
@@ -238,7 +239,10 @@ function ServicesPage() {
       <section className="screen-section theme-paper border-t border-border">
         <div className="section-pad-inner">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="eyebrow">The Lemurian Standard</p>
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Logo size={28} showWordmark={false} />
+              <p className="eyebrow my-0">The Lemurian Standard</p>
+            </div>
             <h2 className="text-3xl sm:text-5xl font-display font-normal text-foreground my-2">
               Why Lemurian Designers?
             </h2>
@@ -250,7 +254,7 @@ function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyLemurianData.map((item, idx) => {
-              const icons = [Sparkles, ShieldCheck, Layers, Truck, Leaf];
+              const icons = [Sparkles, ShieldCheck, Layers, Truck, Leaf] as const;
               const IconComponent = icons[idx % icons.length];
               return (
                 <div

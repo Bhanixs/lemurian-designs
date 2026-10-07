@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 export function FooterBar({
   showCta = true,
@@ -13,8 +14,8 @@ export function FooterBar({
   return (
     <footer className="compact-footer-bar">
       <div className="compact-footer-container">
-        <div className="footer-bar-left">
-          <span className="footer-dot" />
+        <div className="footer-bar-left flex items-center gap-2">
+          <Logo size={20} showWordmark={false} />
           <span className="footer-location-text">
             Natural Stone Craftsmanship · South India & Nationwide
           </span>

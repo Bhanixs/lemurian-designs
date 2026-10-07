@@ -15,6 +15,7 @@ import { useState, type FormEvent } from "react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ImageModal } from "@/components/ImageModal";
+import { Logo } from "@/components/Logo";
 import {
   servicesData,
   portfolioProjects,
@@ -170,7 +171,10 @@ function HomePage() {
         <div className="section-pad-inner">
           <div className="flex justify-between items-end mb-4">
             <div>
-              <p className="eyebrow">Introduction & Philosophy</p>
+              <div className="flex items-center gap-2.5 mb-2">
+                <Logo size={26} showWordmark={false} />
+                <p className="eyebrow my-0">Introduction & Philosophy</p>
+              </div>
               <h2 className="text-3xl sm:text-5xl font-display font-normal text-foreground mt-1 leading-tight">
                 Natural Stone. Refined Craftsmanship. Timeless Spaces.
               </h2>
@@ -640,7 +644,10 @@ function HomePage() {
         <div className="section-pad-inner">
           <div className="flex justify-between items-end mb-3">
             <div>
-              <p className="eyebrow">Craftsmanship With a Design Perspective</p>
+              <div className="flex items-center gap-2.5 mb-2">
+                <Logo size={26} showWordmark={false} />
+                <p className="eyebrow my-0">Craftsmanship With a Design Perspective</p>
+              </div>
               <h2 className="text-3xl sm:text-5xl font-display font-normal text-foreground mt-1 leading-tight">
                 Why Choose Lemurian Designers?
               </h2>
@@ -832,6 +839,9 @@ function HomePage() {
             <div className="lg:col-span-8 bg-black/30 border border-white/15 p-3.5 rounded">
               {submitted ? (
                 <div className="p-4 text-center">
+                  <div className="flex justify-center mb-3">
+                    <Logo size={42} showWordmark={false} />
+                  </div>
                   <CheckCircle2 size={24} className="text-secondary mx-auto mb-2" />
                   <h3 className="text-lg font-display text-white">Consultation Request Received</h3>
                   <p className="text-xs text-white/80 max-w-md mx-auto my-2">
