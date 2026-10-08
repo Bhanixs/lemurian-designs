@@ -680,10 +680,10 @@ function HomePage() {
 
             <div className="lg:col-span-5 p-4 bg-forest text-white rounded space-y-2">
               <p className="eyebrow text-secondary">Service Area Section</p>
-              <h3 className="text-xl font-display text-white">
+              <h3 className="text-xl font-display text-black">
                 Serving Projects Across South India and Beyond
               </h3>
-              <p className="text-xs text-white/80 leading-relaxed">
+              <p className="text-xs text-black leading-relaxed">
                 Lemurian Designers undertakes selected stone design, masonry, engraving and
                 landscaping projects across Tamil Nadu, Karnataka, Kerala and nationwide regions.
               </p>
@@ -697,7 +697,7 @@ function HomePage() {
                 ].map((t) => (
                   <span
                     key={t}
-                    className="text-[0.62rem] bg-white/10 px-2 py-0.5 rounded text-white/90"
+                    className="text-[0.62rem] bg-black/10 px-2 py-0.5 rounded text-black"
                   >
                     {t}
                   </span>
