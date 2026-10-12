@@ -219,7 +219,7 @@ function ServicesPage() {
                         {service.ctaText} <ArrowUpRight size={13} />
                       </Link>
                       <a
-                        href={`https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(service.title)}`}
+                        href={`https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(service.title)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-dark-outline text-xs py-2.5 px-4"
@@ -375,7 +375,7 @@ function ServicesPage() {
           {/* Action Channels from PDF: Call Us | Email Us | Visit Puducherry Studio */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 text-left">
             <a
-              href="tel:+919876543210"
+              href="tel:+919500809487"
               className="p-4 rounded border border-border bg-black/[0.02] hover:bg-black/[0.04] transition-colors flex items-center gap-3"
             >
               <div className="w-9 h-9 rounded-full bg-secondary/15 text-secondary flex items-center justify-center shrink-0">
@@ -385,7 +385,7 @@ function ServicesPage() {
                 <span className="text-[0.65rem] uppercase font-bold tracking-wider text-muted-foreground block">
                   Call Direct
                 </span>
-                <span className="text-xs font-semibold text-foreground">+91 98765 43210</span>
+                <span className="text-xs font-semibold text-foreground">+91 95008 09487</span>
               </div>
             </a>
 

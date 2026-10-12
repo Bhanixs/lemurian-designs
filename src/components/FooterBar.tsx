@@ -22,12 +22,12 @@ export function FooterBar({
         </div>
 
         <div className="footer-bar-center">
-          <a href="tel:+919876543210" className="footer-action-link" aria-label="Direct Phone">
-            <Phone size={11} /> +91 98765 43210
+          <a href="tel:+919500809487" className="footer-action-link" aria-label="Direct Phone">
+            <Phone size={11} /> +91 95008 09487
           </a>
           <span className="footer-divider">/</span>
           <a
-            href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
+            href="https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-action-link"

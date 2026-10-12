@@ -127,11 +127,11 @@ function FaqPage() {
                 </p>
               </div>
               <div className="cta-button-row">
-                <a href="tel:+919876543210" className="btn-primary text-xs py-2.5 px-4">
-                  <Phone size={14} /> Call +91 98765 43210
+                <a href="tel:+919500809487" className="btn-primary text-xs py-2.5 px-4">
+                  <Phone size={14} /> Call +91 95008 09487
                 </a>
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20have%20a%20project%20query"
+                  href="https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20have%20a%20project%20query"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary text-xs py-2.5 px-4"

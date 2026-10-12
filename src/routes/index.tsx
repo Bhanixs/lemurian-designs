@@ -142,11 +142,11 @@ function HomePage() {
           </div>
 
           <div className="hero-quick-actions flex flex-wrap gap-2 items-center mt-3 pt-3 border-t border-white/20">
-            <a href="tel:+919876543210" className="btn-chip text-[0.68rem] py-1 px-3">
+            <a href="tel:+919500809487" className="btn-chip text-[0.68rem] py-1 px-3">
               <Phone size={11} /> Call Us Now
             </a>
             <a
-              href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
+              href="https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-chip text-[0.68rem] py-1 px-3"
@@ -745,7 +745,7 @@ function HomePage() {
                 <Link to="/contact" className="btn-primary text-xs py-2 px-3">
                   Start Your Project <ArrowUpRight size={13} />
                 </Link>
-                <a href="tel:+919876543210" className="btn-secondary text-xs py-2 px-3">
+                <a href="tel:+919500809487" className="btn-secondary text-xs py-2 px-3">
                   <Phone size={11} /> Call Us Directly
                 </a>
               </div>
@@ -902,7 +902,7 @@ function HomePage() {
                         id="homePhone"
                         required
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 95008 09487"
                         className="py-1 px-2 text-xs bg-black/40 border border-white/20 text-white rounded"
                       />
                     </div>
@@ -1057,13 +1057,13 @@ function HomePage() {
                 <h3 className="text-sm font-display text-white mb-2">Speak Directly With Us</h3>
                 <div className="space-y-1.5">
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919500809487"
                     className="btn-secondary w-full text-xs py-1.5 px-3 flex items-center justify-center gap-1.5"
                   >
-                    <Phone size={12} /> Call Us: +91 98765 43210
+                    <Phone size={12} /> Call Us: +91 95008 09487
                   </a>
                   <a
-                    href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
+                    href="https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary w-full text-xs py-1.5 px-3 flex items-center justify-center gap-1.5"

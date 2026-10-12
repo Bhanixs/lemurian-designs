@@ -99,11 +99,11 @@ function ContactPage() {
             <a href="#intake-form" className="btn-primary text-xs py-2.5 px-5">
               Fill Intake Form ↓
             </a>
-            <a href="tel:+919876543210" className="btn-secondary text-xs py-2.5 px-5">
-              <Phone size={13} /> Call Directly: +91 98765 43210
+            <a href="tel:+919500809487" className="btn-secondary text-xs py-2.5 px-5">
+              <Phone size={13} /> Call Directly: +91 95008 09487
             </a>
             <a
-              href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
+              href="https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-xs py-2.5 px-5"
@@ -184,7 +184,7 @@ function ContactPage() {
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="phoneNumber">Phone Number *</label>
-                      <input id="phoneNumber" required type="tel" placeholder="+91 98765 43210" />
+                      <input id="phoneNumber" required type="tel" placeholder="+91 95008 09487" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="emailAddress">Email Address *</label>
@@ -312,11 +312,11 @@ function ContactPage() {
                   consultants.
                 </p>
                 <div className="sidebar-cta-buttons">
-                  <a href="tel:+919876543210" className="btn-secondary" style={{ width: "100%" }}>
-                    <Phone size={14} /> Call Us: +91 98765 43210
+                  <a href="tel:+919500809487" className="btn-secondary" style={{ width: "100%" }}>
+                    <Phone size={14} /> Call Us: +91 95008 09487
                   </a>
                   <a
-                    href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
+                    href="https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary"

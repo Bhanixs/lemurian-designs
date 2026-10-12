@@ -146,12 +146,12 @@ export function Navbar({ theme = "dark" }: { theme?: "dark" | "light" | "auto" }
               </Link>
 
               <div className="mobile-drawer-contact-row">
-                <a href="tel:+919876543210" className="mobile-contact-pill">
+                <a href="tel:+919500809487" className="mobile-contact-pill">
                   <Phone size={13} />
                   <span>Call Direct</span>
                 </a>
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
+                  href="https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20a%20stone%20project"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mobile-contact-pill"
