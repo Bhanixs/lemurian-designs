@@ -1,5 +1,5 @@
 import { X, ZoomIn } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -10,9 +10,15 @@ interface ImageModalProps {
 }
 
 export function ImageModal({ isOpen, onClose, imageSrc, title, caption }: ImageModalProps) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
+      // The close button is the only focusable control, so Tab stays on it.
+      if (e.key === "Tab") e.preventDefault();
+      // A key held to open the viewer keeps repeating here, and would press the close button.
+      if (e.repeat && (e.key === "Enter" || e.key === " ")) e.preventDefault();
     };
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -24,10 +30,21 @@ export function ImageModal({ isOpen, onClose, imageSrc, title, caption }: ImageM
     };
   }, [isOpen, onClose]);
 
+  // Move focus into the dialog on open and hand it back to the opener on close.
+  useEffect(() => {
+    if (!isOpen) return;
+    const opener = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
+    return () => opener?.focus();
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-in fade-in duration-200"
       onClick={onClose}
     >
@@ -36,6 +53,7 @@ export function ImageModal({ isOpen, onClose, imageSrc, title, caption }: ImageM
         onClick={(e) => e.stopPropagation()}
       >
         <button
+          ref={closeButtonRef}
           onClick={onClose}
           type="button"
           className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/70 hover:bg-black text-white/90 hover:text-white border border-white/20 transition-all cursor-pointer"

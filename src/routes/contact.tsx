@@ -16,7 +16,9 @@ import { useState, type FormEvent } from "react";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Logo } from "@/components/Logo";
-import contactHeroImage from "@/assets/contact-hero.jpg";
+import { heroImage } from "@/lib/responsive-image";
+import { pageHead } from "@/lib/seo";
+import contactHeroImage from "@/assets/optimized/contact-hero.webp";
 
 interface ContactSearch {
   service?: string;
@@ -26,16 +28,14 @@ export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>): ContactSearch => ({
     service: typeof search.service === "string" ? search.service : undefined,
   }),
-  head: () => ({
-    meta: [
-      { title: "Request Consultation | Lemurian Designers" },
-      {
-        name: "description",
-        content:
-          "Request a natural stone consultation with Lemurian Designers. Discuss masonry, sculptures, water features, washbasins, resort landscaping, and custom architectural commissions.",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/contact",
+      title: "Request Consultation | Lemurian Designers",
+      description:
+        "Request a natural stone consultation with Lemurian Designers for masonry, sculptures, water features, washbasins, resort landscaping and custom commissions.",
+      image: "contact.jpg",
+    }),
   component: ContactPage,
 });
 
@@ -55,11 +55,12 @@ function ContactPage() {
   return (
     <div className="page-layout">
       <Navbar theme="dark" />
+      <div id="main-content" tabIndex={-1} />
 
       {/* 1. FULLSCREEN HERO */}
       <section className="hero hero-subpage theme-dark">
         <img
-          src={contactHeroImage}
+          {...heroImage(contactHeroImage)}
           alt="Consultation background - Lemurian Designers Studio Entrance"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
