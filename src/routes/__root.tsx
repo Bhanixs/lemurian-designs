@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Logo } from "@/components/Logo";
+import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -89,23 +90,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Natural stone design and craftsmanship." },
       { name: "author", content: "Lemurian Designers" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/logo.png" },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:image", content: `${SITE_URL}/logo.png` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "/logo.png" },
+      { name: "twitter:image", content: `${SITE_URL}/logo.png` },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/logo.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/logo.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: `${SITE_URL}/logo.png`,
+          telephone: "+91 95008 09487",
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -133,6 +148,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:text-foreground"
+      >
+        Skip to main content
+      </a>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

@@ -1,0 +1,150 @@
+{
+  "about-hero": {
+    "width": 1376,
+    "height": 768
+  },
+  "about-manifesto": {
+    "width": 1376,
+    "height": 768
+  },
+  "about-strengths": {
+    "width": 1920,
+    "height": 1281
+  },
+  "contact-hero": {
+    "width": 1376,
+    "height": 768
+  },
+  "faq-hero": {
+    "width": 1920,
+    "height": 1280
+  },
+  "industries-hero": {
+    "width": 1376,
+    "height": 768
+  },
+  "industry-commercial": {
+    "width": 1920,
+    "height": 1158
+  },
+  "industry-ecostay": {
+    "width": 1920,
+    "height": 1280
+  },
+  "industry-public": {
+    "width": 1382,
+    "height": 680
+  },
+  "industry-residential": {
+    "width": 1920,
+    "height": 1281
+  },
+  "lemurian-hero": {
+    "width": 1920,
+    "height": 1280
+  },
+  "material-break": {
+    "width": 1376,
+    "height": 768
+  },
+  "process-hero": {
+    "width": 1920,
+    "height": 1281
+  },
+  "process-phase-1": {
+    "width": 1920,
+    "height": 1464
+  },
+  "process-phase-2": {
+    "width": 1920,
+    "height": 1536
+  },
+  "process-phase-3": {
+    "width": 1200,
+    "height": 896
+  },
+  "process-phase-4": {
+    "width": 533,
+    "height": 392
+  },
+  "process-phase-5": {
+    "width": 308,
+    "height": 237
+  },
+  "process-phase-6": {
+    "width": 788,
+    "height": 631
+  },
+  "process-phase-7": {
+    "width": 415,
+    "height": 371
+  },
+  "resort-landscape-2": {
+    "width": 1920,
+    "height": 1280
+  },
+  "services-hero": {
+    "width": 1376,
+    "height": 768
+  },
+  "stone-basin": {
+    "width": 1920,
+    "height": 1280
+  },
+  "stone-basin-2": {
+    "width": 787,
+    "height": 525
+  },
+  "stone-basin-3": {
+    "width": 565,
+    "height": 300
+  },
+  "stone-engraving": {
+    "width": 768,
+    "height": 565
+  },
+  "stone-fountain": {
+    "width": 1920,
+    "height": 882
+  },
+  "stone-fountain-2": {
+    "width": 1920,
+    "height": 871
+  },
+  "stone-kitchen": {
+    "width": 1376,
+    "height": 768
+  },
+  "stone-masonry": {
+    "width": 1920,
+    "height": 1280
+  },
+  "stone-masonry-2": {
+    "width": 1172,
+    "height": 755
+  },
+  "stone-sculpture": {
+    "width": 853,
+    "height": 460
+  },
+  "stone-sculpture-2": {
+    "width": 511,
+    "height": 349
+  },
+  "stone-sculpture-3": {
+    "width": 1363,
+    "height": 731
+  },
+  "stone-sculpture-4": {
+    "width": 785,
+    "height": 423
+  },
+  "stoneLayingMasonry": {
+    "width": 1920,
+    "height": 1280
+  },
+  "work-hero": {
+    "width": 1376,
+    "height": 768
+  }
+}

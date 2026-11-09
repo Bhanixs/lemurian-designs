@@ -25,37 +25,27 @@ import {
   faqsData,
 } from "@/data/stoneData";
 
-import heroImage from "@/assets/lemurian-hero.jpg";
-import masonryImage from "@/assets/stone-masonry.jpg";
-import sculptureImage from "@/assets/stone-sculpture.jpg";
+import { heroImage, lazyImage } from "@/lib/responsive-image";
+import { imageTriggerProps } from "@/lib/image-trigger";
+import { pageHead } from "@/lib/seo";
+import homeHeroImage from "@/assets/optimized/lemurian-hero.webp";
+import masonryImage from "@/assets/optimized/stone-masonry.webp";
+import sculptureImage from "@/assets/optimized/stone-sculpture.webp";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Lemurian Designers | Natural Stone Design & Masonry" },
-      {
-        name: "description",
-        content:
-          "Lemurian Designers creates premium natural stone walls, engravings, sculptures, benches, fountains, washbasins and resort landscape features with precision craftsmanship.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Stone masonry work, Natural stone design, Stone engraving and sculpting, Custom stone benches, Stone fountains, Stone washbasins, Resort stone landscaping, Stone wall construction",
-      },
-      {
-        property: "og:title",
-        content: "Lemurian Designers | Stone Masonry, Engraving & Custom Stone Works",
-      },
-      {
-        property: "og:description",
-        content:
-          "Lemurian Designers creates premium natural stone environments and handcrafted architectural features for spaces that deserve to be remembered.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/",
+      title: "Lemurian Designers | Natural Stone Design & Masonry",
+      description:
+        "Lemurian Designers creates premium natural stone walls, engravings, sculptures, fountains, washbasins and resort landscape features with precision craftsmanship.",
+      image: "home.jpg",
+      socialTitle: "Lemurian Designers | Stone Masonry, Engraving & Custom Stone Works",
+      socialDescription:
+        "Lemurian Designers creates premium natural stone environments and handcrafted architectural features for spaces that deserve to be remembered.",
+      keywords:
+        "Stone masonry work, Natural stone design, Stone engraving and sculpting, Custom stone benches, Stone fountains, Stone washbasins, Resort stone landscaping, Stone wall construction",
+    }),
   component: HomePage,
 });
 
@@ -94,13 +84,12 @@ function HomePage() {
   return (
     <div className="screen-snap-container">
       <Navbar theme="dark" />
+      <div id="main-content" tabIndex={-1} />
 
       {/* 1. HERO SECTION */}
       <section id="top" className="hero theme-dark">
         <img
-          src={heroImage}
-          width={1920}
-          height={1280}
+          {...heroImage(homeHeroImage)}
           alt="Hand-shaped granite craftsmanship in a tropical stone courtyard"
           className="absolute inset-0 w-full h-full object-cover select-none"
         />
@@ -231,6 +220,7 @@ function HomePage() {
             <div className="lg:col-span-5">
               <div
                 className="showcase-image-box cursor-pointer"
+                {...imageTriggerProps}
                 onClick={() =>
                   setModalImage({
                     src: sculptureImage,
@@ -240,7 +230,7 @@ function HomePage() {
                 }
               >
                 <img
-                  src={sculptureImage}
+                  {...lazyImage(sculptureImage)}
                   alt="Granite stone art"
                   style={{
                     maxHeight: "42vh",
@@ -296,6 +286,7 @@ function HomePage() {
             <div className="lg:col-span-6">
               <div
                 className="showcase-image-box cursor-pointer"
+                {...imageTriggerProps}
                 onClick={() =>
                   setModalImage({
                     src: currentService.image,
@@ -305,7 +296,7 @@ function HomePage() {
                 }
               >
                 <img
-                  src={currentService.image}
+                  {...lazyImage(currentService.image)}
                   alt={currentService.title}
                   style={{ maxHeight: "40vh", objectFit: "cover" }}
                 />
@@ -393,6 +384,7 @@ function HomePage() {
             <div className="lg:col-span-7">
               <div
                 className="showcase-image-box cursor-pointer"
+                {...imageTriggerProps}
                 onClick={() =>
                   setModalImage({
                     src: currentProject.image,
@@ -402,7 +394,7 @@ function HomePage() {
                 }
               >
                 <img
-                  src={currentProject.image}
+                  {...lazyImage(currentProject.image)}
                   alt={currentProject.title}
                   style={{
                     maxHeight: "42vh",
@@ -494,6 +486,7 @@ function HomePage() {
             <div className="lg:col-span-6">
               <div
                 className="showcase-image-box cursor-pointer"
+                {...imageTriggerProps}
                 onClick={() =>
                   setModalImage({
                     src: currentIndustry.image,
@@ -503,7 +496,7 @@ function HomePage() {
                 }
               >
                 <img
-                  src={currentIndustry.image}
+                  {...lazyImage(currentIndustry.image)}
                   alt={currentIndustry.title}
                   style={{ maxHeight: "40vh", objectFit: "cover" }}
                 />
@@ -613,7 +606,7 @@ function HomePage() {
             <div className="lg:col-span-6">
               <div className="showcase-image-box mb-2">
                 <img
-                  src={currentProcess.image}
+                  {...lazyImage(currentProcess.image)}
                   alt={`Phase ${currentProcess.number}: ${currentProcess.title}`}
                   style={{ maxHeight: "36vh", objectFit: "cover" }}
                 />
@@ -656,7 +649,7 @@ function HomePage() {
               to="/about"
               className="text-xs uppercase font-bold text-foreground border-b border-foreground pb-0.5 whitespace-nowrap"
             >
-              Learn More <ArrowUpRight size={13} className="inline ml-1" />
+              Our Craft <ArrowUpRight size={13} className="inline ml-1" />
             </Link>
           </div>
 
@@ -678,7 +671,7 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 p-4 bg-forest text-white rounded space-y-2">
+            <div className="lg:col-span-5 p-4 text-white rounded space-y-2">
               <p className="eyebrow text-secondary">Service Area Section</p>
               <h3 className="text-xl font-display text-black">
                 Serving Projects Across South India and Beyond
