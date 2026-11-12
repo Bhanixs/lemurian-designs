@@ -19,6 +19,7 @@ import { Logo } from "@/components/Logo";
 import { heroImage } from "@/lib/responsive-image";
 import { pageHead } from "@/lib/seo";
 import contactHeroImage from "@/assets/optimized/contact-hero.webp";
+import { submitContactForm } from "@/lib/contact.functions";
 
 interface ContactSearch {
   service?: string;
@@ -47,9 +48,25 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState<string>("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string>("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSending(true);
+    try {
+      await submitContactForm({ data: new FormData(e.currentTarget) });
+      setSubmitted(true);
+      setFileName("");
+    } catch (err) {
+      console.error(err);
+      setError(
+        "Sorry, we couldn't send your request. Please try again, or call/WhatsApp us at +91 95008 09487.",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -167,6 +184,7 @@ function ContactPage() {
                       <label htmlFor="fullName">Full Name *</label>
                       <input
                         id="fullName"
+                        name="fullName"
                         required
                         type="text"
                         placeholder="e.g. Anandha Krishnan"
@@ -176,6 +194,7 @@ function ContactPage() {
                       <label htmlFor="companyName">Company or Project Name</label>
                       <input
                         id="companyName"
+                        name="companyName"
                         type="text"
                         placeholder="e.g. Heritage Sanctuary Resort"
                       />
@@ -185,12 +204,19 @@ function ContactPage() {
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="phoneNumber">Phone Number *</label>
-                      <input id="phoneNumber" required type="tel" placeholder="+91 95008 09487" />
+                      <input
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        required
+                        type="tel"
+                        placeholder="+91 95008 09487"
+                      />
                     </div>
                     <div className="form-group">
                       <label htmlFor="emailAddress">Email Address *</label>
                       <input
                         id="emailAddress"
+                        name="emailAddress"
                         required
                         type="email"
                         placeholder="name@domain.com"
@@ -203,6 +229,7 @@ function ContactPage() {
                       <label htmlFor="projectLocation">Project Location *</label>
                       <input
                         id="projectLocation"
+                        name="projectLocation"
                         required
                         type="text"
                         placeholder="City, District or State"
@@ -212,6 +239,7 @@ function ContactPage() {
                       <label htmlFor="serviceType">Type of Service</label>
                       <select
                         id="serviceType"
+                        name="serviceType"
                         value={selectedService}
                         onChange={(e) => setSelectedService(e.target.value)}
                       >
@@ -238,6 +266,7 @@ function ContactPage() {
                       <label htmlFor="projectSize">Approximate Project Size / Scope</label>
                       <input
                         id="projectSize"
+                        name="projectSize"
                         type="text"
                         placeholder="e.g. 1500 sq ft wall, or 2 custom fountains"
                       />
@@ -246,6 +275,7 @@ function ContactPage() {
                       <label htmlFor="timeline">Preferred Timeline</label>
                       <input
                         id="timeline"
+                        name="timeline"
                         type="text"
                         placeholder="e.g. Immediate, 1-2 months, or Q4"
                       />
@@ -256,6 +286,7 @@ function ContactPage() {
                     <label htmlFor="budgetRange">Budget Range (Optional)</label>
                     <input
                       id="budgetRange"
+                      name="budgetRange"
                       type="text"
                       placeholder="e.g. ₹2,00,000 – ₹10,00,000+"
                     />
@@ -265,6 +296,7 @@ function ContactPage() {
                     <label htmlFor="projectDescription">Project Description & Requirements *</label>
                     <textarea
                       id="projectDescription"
+                      name="projectDescription"
                       required
                       rows={4}
                       placeholder="Tell us about your space, architectural style, stone preferences or specific requirements..."
@@ -282,6 +314,7 @@ function ContactPage() {
                       </span>
                       <input
                         id="fileUpload"
+                        name="fileUpload"
                         type="file"
                         accept="image/*,.pdf,.dwg"
                         className="sr-only"
@@ -294,9 +327,35 @@ function ContactPage() {
                     </label>
                   </div>
 
+                  {/* Honeypot field for spam bots — hidden from real users */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="sr-only"
+                  />
+
+                  {error && (
+                    <p
+                      role="alert"
+                      className="text-sm"
+                      style={{ color: "#f87171", marginTop: "1rem" }}
+                    >
+                      {error}
+                    </p>
+                  )}
+
                   <div style={{ marginTop: "1rem" }}>
-                    <button type="submit" className="btn-primary" style={{ width: "100%" }}>
-                      Submit Consultation Request <ArrowUpRight size={15} />
+                    <button
+                      type="submit"
+                      className="btn-primary"
+                      style={{ width: "100%" }}
+                      disabled={sending}
+                    >
+                      {sending ? "Sending…" : "Submit Consultation Request"}{" "}
+                      <ArrowUpRight size={15} />
                     </button>
                   </div>
                 </form>
