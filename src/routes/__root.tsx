@@ -117,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;
         f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KD56XJKR');`,
+        })(window,document,'script','dataLayer','GTM-WBHP4ZTH');`,
       },
       {
         type: "application/ld+json",
@@ -147,7 +147,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KD56XJKR"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WBHP4ZTH"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
