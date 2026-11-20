@@ -11,11 +11,12 @@ import {
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { industriesData } from "@/data/stoneData";
+import { industriesNavItems } from "@/lib/site-nav";
 import { heroImage, lazyImage } from "@/lib/responsive-image";
 import { pageHead } from "@/lib/seo";
 import industriesHeroImage from "@/assets/optimized/industries-hero.webp";
 
-export const Route = createFileRoute("/industries")({
+export const Route = createFileRoute("/industries/")({
   head: () =>
     pageHead({
       path: "/industries",
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/industries")({
   component: IndustriesPage,
 });
 
-const industryIcons = [Home, Trees, Briefcase, Landmark, Building2];
+const industryIcons = [Landmark, Briefcase, Home, Trees, Building2];
 
 function IndustriesPage() {
   return (
@@ -60,15 +61,15 @@ function IndustriesPage() {
             </p>
 
             <div className="portfolio-categories flex flex-wrap gap-1.5 my-3">
-              {industriesData.map((ind) => (
-                <a
+              {industriesNavItems.map((ind) => (
+                <Link
                   key={ind.number}
-                  href={`#sector-${ind.number}`}
+                  to={ind.path}
                   className="category-badge text-[0.68rem] py-0.5 px-2.5 border-white/30 text-white/90 hover:text-white hover:border-white bg-black/20 backdrop-blur-sm"
                 >
                   <span className="text-secondary font-bold mr-1">{ind.number}</span>
-                  {ind.title}
-                </a>
+                  {ind.label}
+                </Link>
               ))}
             </div>
 
@@ -101,6 +102,9 @@ function IndustriesPage() {
               {industriesData.map((ind, idx) => {
                 const Icon = industryIcons[idx] || Building2;
                 const isReversed = idx % 2 === 1;
+                const subItem = industriesNavItems.find((item) => item.number === ind.number);
+                const subPath = subItem?.path || "/industries";
+
                 return (
                   <article
                     key={ind.number}
@@ -112,11 +116,14 @@ function IndustriesPage() {
                     {/* Image Column */}
                     <div className={`lg:col-span-6 ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
                       <div className="showcase-image-box">
-                        <img
-                          {...lazyImage(ind.image)}
-                          alt={ind.title}
-                          style={{ maxHeight: "55vh", objectFit: "cover" }}
-                        />
+                        <Link to={subPath} className="block overflow-hidden rounded-sm group">
+                          <img
+                            {...lazyImage(ind.image)}
+                            alt={ind.title}
+                            className="group-hover:scale-105 transition-transform duration-500"
+                            style={{ maxHeight: "55vh", objectFit: "cover" }}
+                          />
+                        </Link>
                       </div>
                       <p className="text-xs italic text-muted-foreground mt-2 px-1">
                         “{ind.highlight}”
@@ -132,7 +139,12 @@ function IndustriesPage() {
                       </div>
                       <h3 className="text-3xl sm:text-4xl font-display font-medium text-foreground my-2 flex items-center gap-2.5">
                         <Icon size={26} className="text-secondary shrink-0" />
-                        <span>{ind.title}</span>
+                        <Link
+                          to={subPath}
+                          className="hover:text-secondary transition-colors inline-flex items-center gap-2"
+                        >
+                          {ind.title}
+                        </Link>
                       </h3>
                       <p className="text-sm text-foreground/80 leading-relaxed mb-6">
                         {ind.tagline}
@@ -155,13 +167,21 @@ function IndustriesPage() {
                         </div>
                       </div>
 
-                      <Link
-                        to="/contact"
-                        search={{ service: ind.title }}
-                        className="btn-dark text-xs py-2.5 px-4"
-                      >
-                        Initiate {ind.title.split(" ")[0]} Consultation <ArrowUpRight size={13} />
-                      </Link>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <Link
+                          to={subPath}
+                          className="btn-dark text-xs py-2.5 px-4 inline-flex items-center gap-1.5"
+                        >
+                          Explore {ind.title} Stonework <ArrowUpRight size={13} />
+                        </Link>
+                        <Link
+                          to="/contact"
+                          search={{ service: ind.title }}
+                          className="btn-dark-outline text-xs py-2.5 px-4"
+                        >
+                          Initiate {ind.title.split(" ")[0]} Consultation
+                        </Link>
+                      </div>
                     </div>
                   </article>
                 );

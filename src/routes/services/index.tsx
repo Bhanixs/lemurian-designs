@@ -17,12 +17,13 @@ import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Logo } from "@/components/Logo";
 import { servicesData, whyLemurianData, servicesProcessSteps } from "@/data/stoneData";
+import { servicesNavItems } from "@/lib/site-nav";
 import { heroImage, lazyImage } from "@/lib/responsive-image";
 import { pageHead } from "@/lib/seo";
 import servicesHeroImage from "@/assets/optimized/services-hero.webp";
 import materialBreakImage from "@/assets/optimized/material-break.webp";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () =>
     pageHead({
       path: "/services",
@@ -71,15 +72,15 @@ function ServicesPage() {
             </p>
 
             <div className="portfolio-categories flex flex-wrap gap-1.5 my-3">
-              {servicesData.map((svc) => (
-                <a
+              {servicesNavItems.map((svc) => (
+                <Link
                   key={svc.number}
-                  href={`#service-${svc.number}`}
+                  to={svc.path}
                   className="category-badge text-[0.68rem] py-0.5 px-2.5 border-white/30 text-white/90 hover:text-white hover:border-white bg-black/20 backdrop-blur-sm"
                 >
                   <span className="text-secondary font-bold mr-1">{svc.number}</span>
-                  {svc.title}
-                </a>
+                  {svc.label}
+                </Link>
               ))}
             </div>
 
@@ -111,6 +112,9 @@ function ServicesPage() {
             <div className="space-y-24">
               {servicesData.map((service, index) => {
                 const isReversed = index % 2 === 1;
+                const subItem = servicesNavItems.find((item) => item.number === service.number);
+                const subPath = subItem?.path || "/services";
+
                 return (
                   <article
                     key={service.number}
@@ -122,11 +126,14 @@ function ServicesPage() {
                     {/* Visual Image Column */}
                     <div className={`lg:col-span-6 ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
                       <div className="showcase-image-box">
-                        <img
-                          {...lazyImage(service.image)}
-                          alt={`${service.title} - Lemurian Designers`}
-                          style={{ maxHeight: "55vh", objectFit: "cover" }}
-                        />
+                        <Link to={subPath} className="block overflow-hidden rounded-sm group">
+                          <img
+                            {...lazyImage(service.image)}
+                            alt={`${service.title} - Lemurian Designers`}
+                            className="group-hover:scale-105 transition-transform duration-500"
+                            style={{ maxHeight: "55vh", objectFit: "cover" }}
+                          />
+                        </Link>
                       </div>
                       <p className="text-xs italic text-muted-foreground mt-2.5 px-1">
                         “{service.tagline}”
@@ -146,7 +153,12 @@ function ServicesPage() {
                       </div>
 
                       <h3 className="text-3xl sm:text-4xl font-display font-medium text-foreground my-2">
-                        {service.title}
+                        <Link
+                          to={subPath}
+                          className="hover:text-secondary transition-colors inline-flex items-center gap-2"
+                        >
+                          {service.title}
+                        </Link>
                       </h3>
 
                       <p className="text-sm text-foreground/85 leading-relaxed mb-5">
@@ -203,14 +215,20 @@ function ServicesPage() {
                         ))}
                       </div>
 
-                      {/* Action Links */}
+                      {/* Action Links with Descriptive Sub-page Anchor */}
                       <div className="flex flex-wrap items-center gap-3">
+                        <Link
+                          to={subPath}
+                          className="btn-dark text-xs py-2.5 px-4 inline-flex items-center gap-1.5"
+                        >
+                          Explore {service.title} Details <ArrowUpRight size={13} />
+                        </Link>
                         <Link
                           to="/contact"
                           search={{ service: service.serviceKey }}
-                          className="btn-dark text-xs py-2.5 px-4"
+                          className="btn-dark-outline text-xs py-2.5 px-4"
                         >
-                          {service.ctaText} <ArrowUpRight size={13} />
+                          {service.ctaText}
                         </Link>
                         <a
                           href={`https://wa.me/919500809487?text=Hello%20Lemurian%20Designers%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(service.title)}`}
@@ -218,7 +236,7 @@ function ServicesPage() {
                           rel="noopener noreferrer"
                           className="btn-dark-outline text-xs py-2.5 px-4"
                         >
-                          <MessageCircle size={13} /> WhatsApp Enquiry
+                          <MessageCircle size={13} /> WhatsApp
                         </a>
                       </div>
                     </div>
@@ -363,7 +381,6 @@ function ServicesPage() {
               timeless longevity.
             </p>
 
-            {/* Action Channels from PDF: Call Us | Email Us | Visit Puducherry Studio */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 text-left">
               <a
                 href="tel:+919500809487"

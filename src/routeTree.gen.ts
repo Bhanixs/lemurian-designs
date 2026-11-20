@@ -13,10 +13,22 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ProcessRouteImport } from './routes/process'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as IndustriesIndexRouteImport } from './routes/industries/index'
+import { Route as IndustriesCommercialSpacesRouteImport } from './routes/industries/commercial-spaces'
+import { Route as IndustriesFarmsEcoStaysRouteImport } from './routes/industries/farms-eco-stays'
+import { Route as IndustriesPublicCommunityRouteImport } from './routes/industries/public-community'
+import { Route as IndustriesResidentialProjectsRouteImport } from './routes/industries/residential-projects'
+import { Route as IndustriesResortsHotelsRouteImport } from './routes/industries/resorts-hotels'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesResortLandscapeRouteImport } from './routes/services/resort-landscape'
+import { Route as ServicesStoneBasinsTubsRouteImport } from './routes/services/stone-basins-tubs'
+import { Route as ServicesStoneEngravingRouteImport } from './routes/services/stone-engraving'
+import { Route as ServicesStoneFountainsRouteImport } from './routes/services/stone-fountains'
+import { Route as ServicesStoneKitchensRouteImport } from './routes/services/stone-kitchens'
+import { Route as ServicesStoneLayingMasonryRouteImport } from './routes/services/stone-laying-masonry'
+import { Route as ServicesStoneSculptingRouteImport } from './routes/services/stone-sculpting'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -38,24 +50,88 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndustriesRoute = IndustriesRouteImport.update({
-  id: '/industries',
-  path: '/industries',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProcessRoute = ProcessRouteImport.update({
   id: '/process',
   path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
+  id: '/industries/',
+  path: '/industries/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesCommercialSpacesRoute =
+  IndustriesCommercialSpacesRouteImport.update({
+    id: '/industries/commercial-spaces',
+    path: '/industries/commercial-spaces',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndustriesFarmsEcoStaysRoute = IndustriesFarmsEcoStaysRouteImport.update({
+  id: '/industries/farms-eco-stays',
+  path: '/industries/farms-eco-stays',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesPublicCommunityRoute =
+  IndustriesPublicCommunityRouteImport.update({
+    id: '/industries/public-community',
+    path: '/industries/public-community',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndustriesResidentialProjectsRoute =
+  IndustriesResidentialProjectsRouteImport.update({
+    id: '/industries/residential-projects',
+    path: '/industries/residential-projects',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndustriesResortsHotelsRoute = IndustriesResortsHotelsRouteImport.update({
+  id: '/industries/resorts-hotels',
+  path: '/industries/resorts-hotels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesResortLandscapeRoute = ServicesResortLandscapeRouteImport.update({
+  id: '/services/resort-landscape',
+  path: '/services/resort-landscape',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesStoneBasinsTubsRoute = ServicesStoneBasinsTubsRouteImport.update({
+  id: '/services/stone-basins-tubs',
+  path: '/services/stone-basins-tubs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesStoneEngravingRoute = ServicesStoneEngravingRouteImport.update({
+  id: '/services/stone-engraving',
+  path: '/services/stone-engraving',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesStoneFountainsRoute = ServicesStoneFountainsRouteImport.update({
+  id: '/services/stone-fountains',
+  path: '/services/stone-fountains',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesStoneKitchensRoute = ServicesStoneKitchensRouteImport.update({
+  id: '/services/stone-kitchens',
+  path: '/services/stone-kitchens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesStoneLayingMasonryRoute =
+  ServicesStoneLayingMasonryRouteImport.update({
+    id: '/services/stone-laying-masonry',
+    path: '/services/stone-laying-masonry',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesStoneSculptingRoute = ServicesStoneSculptingRouteImport.update({
+  id: '/services/stone-sculpting',
+  path: '/services/stone-sculpting',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -64,20 +140,44 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/industries': typeof IndustriesRoute
   '/process': typeof ProcessRoute
-  '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
+  '/industries/commercial-spaces': typeof IndustriesCommercialSpacesRoute
+  '/industries/farms-eco-stays': typeof IndustriesFarmsEcoStaysRoute
+  '/industries/public-community': typeof IndustriesPublicCommunityRoute
+  '/industries/residential-projects': typeof IndustriesResidentialProjectsRoute
+  '/industries/resorts-hotels': typeof IndustriesResortsHotelsRoute
+  '/services/resort-landscape': typeof ServicesResortLandscapeRoute
+  '/services/stone-basins-tubs': typeof ServicesStoneBasinsTubsRoute
+  '/services/stone-engraving': typeof ServicesStoneEngravingRoute
+  '/services/stone-fountains': typeof ServicesStoneFountainsRoute
+  '/services/stone-kitchens': typeof ServicesStoneKitchensRoute
+  '/services/stone-laying-masonry': typeof ServicesStoneLayingMasonryRoute
+  '/services/stone-sculpting': typeof ServicesStoneSculptingRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/industries': typeof IndustriesRoute
   '/process': typeof ProcessRoute
-  '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
+  '/industries/commercial-spaces': typeof IndustriesCommercialSpacesRoute
+  '/industries/farms-eco-stays': typeof IndustriesFarmsEcoStaysRoute
+  '/industries/public-community': typeof IndustriesPublicCommunityRoute
+  '/industries/residential-projects': typeof IndustriesResidentialProjectsRoute
+  '/industries/resorts-hotels': typeof IndustriesResortsHotelsRoute
+  '/services/resort-landscape': typeof ServicesResortLandscapeRoute
+  '/services/stone-basins-tubs': typeof ServicesStoneBasinsTubsRoute
+  '/services/stone-engraving': typeof ServicesStoneEngravingRoute
+  '/services/stone-fountains': typeof ServicesStoneFountainsRoute
+  '/services/stone-kitchens': typeof ServicesStoneKitchensRoute
+  '/services/stone-laying-masonry': typeof ServicesStoneLayingMasonryRoute
+  '/services/stone-sculpting': typeof ServicesStoneSculptingRoute
+  '/industries': typeof IndustriesIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -85,10 +185,22 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/industries': typeof IndustriesRoute
   '/process': typeof ProcessRoute
-  '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
+  '/industries/commercial-spaces': typeof IndustriesCommercialSpacesRoute
+  '/industries/farms-eco-stays': typeof IndustriesFarmsEcoStaysRoute
+  '/industries/public-community': typeof IndustriesPublicCommunityRoute
+  '/industries/residential-projects': typeof IndustriesResidentialProjectsRoute
+  '/industries/resorts-hotels': typeof IndustriesResortsHotelsRoute
+  '/services/resort-landscape': typeof ServicesResortLandscapeRoute
+  '/services/stone-basins-tubs': typeof ServicesStoneBasinsTubsRoute
+  '/services/stone-engraving': typeof ServicesStoneEngravingRoute
+  '/services/stone-fountains': typeof ServicesStoneFountainsRoute
+  '/services/stone-kitchens': typeof ServicesStoneKitchensRoute
+  '/services/stone-laying-masonry': typeof ServicesStoneLayingMasonryRoute
+  '/services/stone-sculpting': typeof ServicesStoneSculptingRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -97,30 +209,66 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faq'
-    | '/industries'
     | '/process'
-    | '/services'
     | '/work'
+    | '/industries/commercial-spaces'
+    | '/industries/farms-eco-stays'
+    | '/industries/public-community'
+    | '/industries/residential-projects'
+    | '/industries/resorts-hotels'
+    | '/services/resort-landscape'
+    | '/services/stone-basins-tubs'
+    | '/services/stone-engraving'
+    | '/services/stone-fountains'
+    | '/services/stone-kitchens'
+    | '/services/stone-laying-masonry'
+    | '/services/stone-sculpting'
+    | '/industries/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/faq'
-    | '/industries'
     | '/process'
-    | '/services'
     | '/work'
+    | '/industries/commercial-spaces'
+    | '/industries/farms-eco-stays'
+    | '/industries/public-community'
+    | '/industries/residential-projects'
+    | '/industries/resorts-hotels'
+    | '/services/resort-landscape'
+    | '/services/stone-basins-tubs'
+    | '/services/stone-engraving'
+    | '/services/stone-fountains'
+    | '/services/stone-kitchens'
+    | '/services/stone-laying-masonry'
+    | '/services/stone-sculpting'
+    | '/industries'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/faq'
-    | '/industries'
     | '/process'
-    | '/services'
     | '/work'
+    | '/industries/commercial-spaces'
+    | '/industries/farms-eco-stays'
+    | '/industries/public-community'
+    | '/industries/residential-projects'
+    | '/industries/resorts-hotels'
+    | '/services/resort-landscape'
+    | '/services/stone-basins-tubs'
+    | '/services/stone-engraving'
+    | '/services/stone-fountains'
+    | '/services/stone-kitchens'
+    | '/services/stone-laying-masonry'
+    | '/services/stone-sculpting'
+    | '/industries/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -128,10 +276,22 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
-  IndustriesRoute: typeof IndustriesRoute
   ProcessRoute: typeof ProcessRoute
-  ServicesRoute: typeof ServicesRoute
   WorkRoute: typeof WorkRoute
+  IndustriesCommercialSpacesRoute: typeof IndustriesCommercialSpacesRoute
+  IndustriesFarmsEcoStaysRoute: typeof IndustriesFarmsEcoStaysRoute
+  IndustriesPublicCommunityRoute: typeof IndustriesPublicCommunityRoute
+  IndustriesResidentialProjectsRoute: typeof IndustriesResidentialProjectsRoute
+  IndustriesResortsHotelsRoute: typeof IndustriesResortsHotelsRoute
+  ServicesResortLandscapeRoute: typeof ServicesResortLandscapeRoute
+  ServicesStoneBasinsTubsRoute: typeof ServicesStoneBasinsTubsRoute
+  ServicesStoneEngravingRoute: typeof ServicesStoneEngravingRoute
+  ServicesStoneFountainsRoute: typeof ServicesStoneFountainsRoute
+  ServicesStoneKitchensRoute: typeof ServicesStoneKitchensRoute
+  ServicesStoneLayingMasonryRoute: typeof ServicesStoneLayingMasonryRoute
+  ServicesStoneSculptingRoute: typeof ServicesStoneSculptingRoute
+  IndustriesIndexRoute: typeof IndustriesIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -164,13 +324,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/industries': {
-      id: '/industries'
-      path: '/industries'
-      fullPath: '/industries'
-      preLoaderRoute: typeof IndustriesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/process': {
       id: '/process'
       path: '/process'
@@ -178,18 +331,109 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/work': {
       id: '/work'
       path: '/work'
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/': {
+      id: '/industries/'
+      path: '/industries'
+      fullPath: '/industries/'
+      preLoaderRoute: typeof IndustriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/commercial-spaces': {
+      id: '/industries/commercial-spaces'
+      path: '/industries/commercial-spaces'
+      fullPath: '/industries/commercial-spaces'
+      preLoaderRoute: typeof IndustriesCommercialSpacesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/farms-eco-stays': {
+      id: '/industries/farms-eco-stays'
+      path: '/industries/farms-eco-stays'
+      fullPath: '/industries/farms-eco-stays'
+      preLoaderRoute: typeof IndustriesFarmsEcoStaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/public-community': {
+      id: '/industries/public-community'
+      path: '/industries/public-community'
+      fullPath: '/industries/public-community'
+      preLoaderRoute: typeof IndustriesPublicCommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/residential-projects': {
+      id: '/industries/residential-projects'
+      path: '/industries/residential-projects'
+      fullPath: '/industries/residential-projects'
+      preLoaderRoute: typeof IndustriesResidentialProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/resorts-hotels': {
+      id: '/industries/resorts-hotels'
+      path: '/industries/resorts-hotels'
+      fullPath: '/industries/resorts-hotels'
+      preLoaderRoute: typeof IndustriesResortsHotelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/resort-landscape': {
+      id: '/services/resort-landscape'
+      path: '/services/resort-landscape'
+      fullPath: '/services/resort-landscape'
+      preLoaderRoute: typeof ServicesResortLandscapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/stone-basins-tubs': {
+      id: '/services/stone-basins-tubs'
+      path: '/services/stone-basins-tubs'
+      fullPath: '/services/stone-basins-tubs'
+      preLoaderRoute: typeof ServicesStoneBasinsTubsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/stone-engraving': {
+      id: '/services/stone-engraving'
+      path: '/services/stone-engraving'
+      fullPath: '/services/stone-engraving'
+      preLoaderRoute: typeof ServicesStoneEngravingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/stone-fountains': {
+      id: '/services/stone-fountains'
+      path: '/services/stone-fountains'
+      fullPath: '/services/stone-fountains'
+      preLoaderRoute: typeof ServicesStoneFountainsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/stone-kitchens': {
+      id: '/services/stone-kitchens'
+      path: '/services/stone-kitchens'
+      fullPath: '/services/stone-kitchens'
+      preLoaderRoute: typeof ServicesStoneKitchensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/stone-laying-masonry': {
+      id: '/services/stone-laying-masonry'
+      path: '/services/stone-laying-masonry'
+      fullPath: '/services/stone-laying-masonry'
+      preLoaderRoute: typeof ServicesStoneLayingMasonryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/stone-sculpting': {
+      id: '/services/stone-sculpting'
+      path: '/services/stone-sculpting'
+      fullPath: '/services/stone-sculpting'
+      preLoaderRoute: typeof ServicesStoneSculptingRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -200,10 +444,22 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
-  IndustriesRoute: IndustriesRoute,
   ProcessRoute: ProcessRoute,
-  ServicesRoute: ServicesRoute,
   WorkRoute: WorkRoute,
+  IndustriesCommercialSpacesRoute: IndustriesCommercialSpacesRoute,
+  IndustriesFarmsEcoStaysRoute: IndustriesFarmsEcoStaysRoute,
+  IndustriesPublicCommunityRoute: IndustriesPublicCommunityRoute,
+  IndustriesResidentialProjectsRoute: IndustriesResidentialProjectsRoute,
+  IndustriesResortsHotelsRoute: IndustriesResortsHotelsRoute,
+  ServicesResortLandscapeRoute: ServicesResortLandscapeRoute,
+  ServicesStoneBasinsTubsRoute: ServicesStoneBasinsTubsRoute,
+  ServicesStoneEngravingRoute: ServicesStoneEngravingRoute,
+  ServicesStoneFountainsRoute: ServicesStoneFountainsRoute,
+  ServicesStoneKitchensRoute: ServicesStoneKitchensRoute,
+  ServicesStoneLayingMasonryRoute: ServicesStoneLayingMasonryRoute,
+  ServicesStoneSculptingRoute: ServicesStoneSculptingRoute,
+  IndustriesIndexRoute: IndustriesIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
